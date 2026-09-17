@@ -1,0 +1,75 @@
+PROZIVO SPORTS — FIREBASE LOGIN + CUSTOMER ACCOUNTS
+
+WHAT THIS VERSION DOES
+1. Shows Login / Create Account when the website opens.
+2. Customers can create an account with:
+   - Full name
+   - Mobile number
+   - Email
+   - Password
+3. Login uses Firebase Email/Password Authentication.
+4. A profile is saved in Firestore at users/{uid}.
+5. "My Account" shows name, email and phone.
+6. Forgot Password sends a Firebase password-reset email.
+7. Logout is included.
+8. Existing product catalog + email enquiry form remain in the website.
+
+STEP 1 — CREATE FIREBASE PROJECT
+1. Go to https://console.firebase.google.com/
+2. Create a Firebase project named something like:
+   Prozivo Sports
+3. Open the project.
+
+STEP 2 — REGISTER THE WEBSITE
+1. In Firebase Project Overview, click the Web icon (</>).
+2. App nickname: Prozivo Sports Website
+3. Register app.
+4. Copy the firebaseConfig object.
+
+STEP 3 — ENABLE EMAIL/PASSWORD LOGIN
+1. Firebase Console -> Authentication
+2. Sign-in method / Providers
+3. Enable Email/Password.
+4. Save.
+
+STEP 4 — CREATE FIRESTORE
+1. Firebase Console -> Firestore Database
+2. Create database.
+3. Choose the appropriate location for your project.
+4. After it is created, open the Rules tab.
+5. Replace the rules with the contents of firestore.rules in this package.
+6. Publish the rules.
+
+STEP 5 — PASTE YOUR FIREBASE CONFIG
+Open index.html.
+Search for:
+    const firebaseConfig = {
+
+Replace the six placeholder values with the config Firebase gave you.
+
+DO NOT paste a Firebase Admin SDK private key into this website.
+The Web App config is client-side configuration; access control comes from Firebase Authentication and Firestore Security Rules.
+
+STEP 6 — GITHUB PAGES DOMAIN
+If your website is on GitHub Pages, add the exact GitHub Pages domain in:
+Firebase Console -> Authentication -> Settings -> Authorized domains
+
+Example:
+yourusername.github.io
+
+When you later buy a custom domain, add that domain there too.
+
+STEP 7 — GITHUB UPLOAD
+Replace only the old index.html with this new index.html.
+
+IMPORTANT
+The website will show a setup notice until you paste a real Firebase Web App config.
+The "Preview website as guest" button is there so you can still view the design before Firebase is configured.
+
+SECURITY
+Do not create "allow read, write: if true" rules for customer data.
+The included rules restrict each customer profile/order path to that signed-in user's UID.
+
+CURRENT LIMITATION
+Customer accounts are implemented now.
+Actual payment checkout and order creation are the next step. The included /users/{uid}/orders path is already prepared for that.
