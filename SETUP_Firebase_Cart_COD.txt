@@ -1,0 +1,57 @@
+PROZIVO SPORTS — CART + BUY NOW + CHECKOUT + COD + MY ORDERS
+
+This first commerce version keeps:
+- Firebase Email/Password customer accounts
+- Product categories and product catalog
+- Add to Cart
+- Buy Now
+- Cart quantity/remove
+- Checkout with customer delivery address
+- Cash on Delivery
+- Orders stored in Firestore
+- My Orders customer view
+- Existing email enquiry form
+
+IMPORTANT PRICING
+The catalog contains demo prices so the cart and checkout work now. These are NOT verified selling prices.
+Before taking real orders, replace demo prices with your actual selling prices in PRODUCT_CATALOG inside index.html.
+
+GITHUB
+Replace ONLY index.html with the new file in your GitHub Pages repository.
+
+FIREBASE
+1. Authentication -> Sign-in method -> Email/Password = Enabled.
+2. Authentication -> Settings -> Authorized domains must include:
+   prozivosports-beep.github.io
+3. Firestore Database -> Create database.
+4. Open Firestore -> Rules.
+5. Replace the rules with firestore.rules from this package.
+6. Publish.
+
+The exact Firebase Web App configuration has already been inserted into index.html.
+
+ORDER DATA
+Customer profile:
+users/{uid}
+
+Order:
+orders/{orderId}
+
+An order contains:
+- userId
+- customer name/email/phone
+- delivery address
+- items
+- total
+- COD payment method
+- Pending payment/order status
+- createdAt
+
+SECURITY
+The rules only allow a signed-in customer to read their own orders.
+Customers cannot update/delete orders from the browser.
+
+NOTE
+This is a first COD ordering version. Online payment, admin order dashboard, automated order email/push notifications, shipping/courier integration and inventory control are not included yet.
+
+IMPORTANT FOR REAL SALES: Before accepting real orders, move product pricing/inventory to a trusted backend and validate totals server-side. Client-side demo prices can be changed by a browser user.
