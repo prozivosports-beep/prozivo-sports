@@ -1,0 +1,1404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Prozivo Sports – Sports wholesale and retail store. Quality sports equipment, gear and accessories for every player." />
+  <meta name="theme-color" content="#0b0b0b" />
+  <title>Prozivo Sports | Wholesale & Retail</title>
+  <link rel="icon" href="assets/prozivo-logo.webp" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&family=Oswald:wght@500;600;700&display=swap" rel="stylesheet">
+  <style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#f6f6f2;
+  --paper:#fff;
+  --ink:#0b0b0b;
+  --muted:#696969;
+  --line:#deded8;
+  --accent:#e51c23;
+  --accent-dark:#a90f14;
+  --gold:#d5ab4b;
+  --soft:#efefeb;
+}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;display:block}
+.container{width:min(1180px,92%);margin:auto}
+.site-header{position:sticky;top:0;z-index:50;background:rgba(246,246,242,.9);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.07)}
+.nav-wrap{min-height:78px;display:flex;align-items:center;justify-content:space-between;gap:30px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;letter-spacing:.08em}
+.brand img{width:42px;height:42px;object-fit:contain}
+.brand span{font-size:20px}
+.brand b{color:var(--accent)}
+.nav{display:flex;align-items:center;gap:28px;font-size:14px;font-weight:600}
+.nav a{opacity:.86}
+.nav a:hover{opacity:1}
+.nav-cta{padding:12px 18px;border-radius:999px;background:var(--ink);color:white!important}
+.menu-toggle{display:none;border:0;background:transparent;font-size:28px;cursor:pointer}
+.hero{position:relative;overflow:hidden;padding:95px 0 90px;background:linear-gradient(130deg,#f7f7f4 0%,#fff 52%,#efefea 100%)}
+.hero-grid{display:grid;grid-template-columns:1.05fr .95fr;align-items:center;gap:55px}
+.eyebrow{font-size:12px;letter-spacing:.22em;font-weight:800;color:#555;text-transform:uppercase;margin-bottom:14px}
+.hero h1,.section h2{font-family:Oswald,Impact,sans-serif;line-height:1.03;letter-spacing:-.02em}
+.hero h1{font-size:clamp(60px,8vw,110px);text-transform:uppercase}
+.hero h1 span,.section h2 span{color:var(--accent)}
+.hero-text{font-size:18px;max-width:640px;color:#555;margin:28px 0 32px}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;border-radius:10px;font-weight:800;border:1px solid transparent;transition:.2s}
+.btn-primary{background:var(--accent);color:white;box-shadow:0 10px 25px rgba(229,28,35,.2)}
+.btn-primary:hover{background:var(--accent-dark);transform:translateY(-1px)}
+.btn-outline{background:white;border-color:#cfcfc9}
+.btn-outline:hover{border-color:var(--ink)}
+.stats{display:flex;gap:35px;margin-top:42px;padding-top:25px;border-top:1px solid var(--line)}
+.stats div{display:flex;flex-direction:column}
+.stats strong{font-size:15px;text-transform:uppercase}
+.stats span{font-size:12px;color:var(--muted);margin-top:5px}
+.hero-art{position:relative;min-height:480px;display:grid;place-items:center}
+.art-ring{position:absolute;width:410px;height:410px;border:1px solid #bdbdb5;border-radius:50%;box-shadow:0 0 0 20px rgba(255,255,255,.5),0 0 0 21px #e2e2dc}
+.art-card{position:relative;width:min(440px,80vw);aspect-ratio:1/1;padding:55px 40px;border-radius:34px;background:linear-gradient(145deg,#111,#222);color:#fff;display:flex;flex-direction:column;justify-content:center;align-items:center;box-shadow:0 25px 55px rgba(0,0,0,.18);border:1px solid #3a3a3a}
+.art-label{font-size:15px;letter-spacing:.3em;font-weight:700;color:#aaa}
+.sports-word{font-family:Oswald,sans-serif;font-size:74px;letter-spacing:.1em;margin:7px 0;color:white}
+.card-main p{letter-spacing:.28em;color:#e51c23;font-weight:800}
+.equipment-row{display:flex;gap:17px;font-size:38px;margin-top:34px}
+.floating-card{position:absolute;background:white;padding:16px 19px;border-radius:14px;border:1px solid #ddd;box-shadow:0 15px 35px rgba(0,0,0,.1);font-size:11px;letter-spacing:.12em}
+.floating-card b{font-size:15px}
+.float-one{left:0;top:85px}
+.float-two{right:0;bottom:70px}
+.hero-glow{position:absolute;border-radius:50%;filter:blur(15px);opacity:.7}
+.glow-one{width:260px;height:260px;right:-70px;top:-90px;background:#e6e6d9}
+.glow-two{width:200px;height:200px;left:-90px;bottom:-80px;background:#f0d5d6}
+.marquee{overflow:hidden;background:var(--ink);color:white}
+.marquee-track{width:max-content;display:flex;align-items:center;gap:20px;padding:13px 0;font-size:11px;letter-spacing:.2em;font-weight:800;animation:scroll 30s linear infinite}
+.marquee i{font-style:normal;color:var(--gold)}
+@keyframes scroll{to{transform:translateX(-50%)}}
+.section{padding:105px 0}
+.section-heading{display:flex;justify-content:space-between;gap:30px;align-items:end;margin-bottom:45px}
+.section h2{font-size:clamp(44px,5vw,72px);max-width:830px}
+.heading-note{max-width:360px;color:var(--muted);font-size:14px}
+.category-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.category-card{position:relative;min-height:220px;padding:30px;border-radius:22px;background:white;border:1px solid #e3e3de;overflow:hidden;transition:.25s}
+.category-card:hover{transform:translateY(-5px);box-shadow:0 20px 45px rgba(0,0,0,.08)}
+.category-icon{font-size:44px;margin-bottom:24px}
+.category-card h3{font-size:25px;margin-bottom:8px}
+.category-card p{font-size:14px;color:var(--muted);max-width:330px}
+.category-card a{display:inline-block;margin-top:20px;font-weight:800;font-size:13px;color:var(--accent)}
+.category-card::after{content:"";position:absolute;width:145px;height:145px;border-radius:50%;right:-55px;bottom:-70px;background:rgba(0,0,0,.035)}
+.dark-section{background:#0d0d0d;color:white}
+.dark-section .eyebrow{color:#a7a7a7}
+.dark-section .section-text{color:#bcbcbc}
+.wholesale-grid{display:grid;grid-template-columns:1fr .82fr;gap:65px;align-items:center}
+.section-text{max-width:650px;color:#575757;font-size:17px;margin:25px 0 30px}
+.feature-list{display:grid;gap:0;margin:30px 0 35px}
+.feature-list>div{display:grid;grid-template-columns:45px 1fr;gap:12px;padding:16px 0;border-top:1px solid #292929}
+.feature-list>div:last-child{border-bottom:1px solid #292929}
+.feature-list span{font-size:12px;color:var(--gold);font-weight:800;padding-top:3px}
+.feature-list b{display:block}
+.feature-list small{display:block;color:#8e8e8e;margin-top:4px}
+.quote-panel{min-height:440px;border-radius:28px;padding:38px;background:linear-gradient(145deg,#1a1a1a,#080808);border:1px solid #303030;display:flex;flex-direction:column;justify-content:space-between;position:relative;overflow:hidden}
+.quote-panel::before{content:"";position:absolute;inset:auto -90px -120px auto;width:300px;height:300px;border-radius:50%;border:1px solid #3f3f3f}
+.quote-top{font-size:12px;letter-spacing:.3em;color:#aaa}
+blockquote{font-family:Oswald,sans-serif;font-size:43px;line-height:1.05;max-width:500px}
+.quote-bottom{display:flex;gap:22px;flex-wrap:wrap;color:#aaa;font-size:10px;letter-spacing:.15em}
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.about-logo-wrap{display:grid;place-items:center;background:#fff;border:1px solid #e3e3de;min-height:430px;border-radius:28px}
+.about-logo{width:280px}
+.pill-row{display:flex;gap:10px;flex-wrap:wrap}
+.pill-row span{padding:10px 14px;background:#fff;border:1px solid #ddd;border-radius:999px;font-size:12px;font-weight:700}
+.contact-section{padding-top:50px}
+.contact-card{background:#fff;border:1px solid #dfdfda;border-radius:30px;overflow:hidden;display:grid;grid-template-columns:.9fr 1.1fr}
+.contact-copy{padding:55px;background:linear-gradient(145deg,#111,#1c1c1c);color:white}
+.contact-copy .eyebrow{color:#aaa}
+.contact-copy h2{font-family:Oswald,sans-serif;font-size:60px;line-height:1;margin-bottom:18px}
+.contact-copy>p{color:#bdbdbd;max-width:440px}
+.contact-items{display:grid;gap:13px;margin:28px 0}
+.contact-items a{display:flex;gap:11px;align-items:center;color:#f0f0f0;font-size:14px}
+.contact-items span{width:28px;height:28px;display:grid;place-items:center;border-radius:50%;background:#292929}
+.social-row{display:flex;gap:18px;flex-wrap:wrap;font-size:12px;color:#ddd;text-transform:uppercase;letter-spacing:.12em}
+.contact-form{padding:55px}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+input,select,textarea{width:100%;border:1px solid #d8d8d2;background:#fbfbf8;border-radius:10px;padding:14px 15px;font:inherit;font-size:14px;outline:none;margin-bottom:12px}
+input:focus,select:focus,textarea:focus{border-color:#999}
+textarea{resize:vertical}
+.btn-full{width:100%;border:none;cursor:pointer}
+.form-note{font-size:11px;color:#777;margin-top:12px}
+.form-status{margin-top:10px;font-size:12px;font-weight:700}
+.whatsapp-fab{position:fixed;right:22px;bottom:22px;width:54px;height:54px;border-radius:50%;display:grid;place-items:center;background:#1dba63;color:white;font-weight:900;box-shadow:0 12px 30px rgba(0,0,0,.2);z-index:60}
+.footer{background:#070707;color:white;padding:45px 0}
+.footer-grid{display:grid;grid-template-columns:1fr auto auto;gap:30px;align-items:end}
+.footer-brand{margin-bottom:10px}
+.footer p{font-size:12px;color:#8c8c8c}
+.footer-links{display:flex;gap:20px;font-size:12px;color:#bdbdbd;flex-wrap:wrap}
+.copyright{font-size:11px;color:#777;white-space:nowrap}
+
+/* Rich sports visuals */
+.hero-art{min-height:520px;display:flex;align-items:center;justify-content:center}
+.hero-image-wrap{position:relative;width:100%;max-width:650px;border-radius:26px;overflow:hidden;background:#0b0b0b;border:1px solid #2f2f2f;box-shadow:0 30px 70px rgba(0,0,0,.18)}
+.hero-banner{width:100%;height:auto;display:block;transform:scale(1.03);transition:transform 8s ease}
+.hero-image-wrap:hover .hero-banner{transform:scale(1.08)}
+.hero-image-badge{position:absolute;left:18px;bottom:18px;background:rgba(0,0,0,.78);color:#fff;border:1px solid rgba(255,255,255,.22);padding:10px 13px;border-radius:999px;font-size:10px;letter-spacing:.12em;font-weight:800;backdrop-filter:blur(8px)}
+.motion-section{padding:70px 0;background:#0e1115;color:#fff;overflow:hidden}
+.motion-heading{display:flex;align-items:end;justify-content:space-between;gap:25px;margin-bottom:25px}
+.motion-heading .eyebrow{color:#9e9e9e}
+.motion-heading h2{font-family:Oswald,Impact,sans-serif;font-size:60px;line-height:1}
+.motion-heading h2 span{color:var(--accent)}
+.motion-heading>p{max-width:380px;color:#b5b5b5;font-size:14px}
+.motion-rail{display:flex;gap:14px;width:max-content;animation:motionScroll 28s linear infinite}
+.motion-section:hover .motion-rail{animation-play-state:paused}
+.motion-card{width:190px;min-height:160px;border:1px solid #30343a;border-radius:20px;background:linear-gradient(145deg,#1a1e24,#0b0d10);padding:20px;display:flex;flex-direction:column;justify-content:flex-end;position:relative;overflow:hidden;box-shadow:0 16px 32px rgba(0,0,0,.18)}
+.motion-card::after{content:"";position:absolute;width:110px;height:110px;border-radius:50%;right:-35px;top:-35px;background:rgba(229,28,35,.16)}
+.motion-icon{font-size:48px;line-height:1;margin-bottom:24px;filter:drop-shadow(0 7px 10px rgba(0,0,0,.25));animation:bounceSports 2.3s ease-in-out infinite}
+.motion-card:nth-child(2) .motion-icon{animation-delay:.15s}
+.motion-card:nth-child(3) .motion-icon{animation-delay:.3s}
+.motion-card:nth-child(4) .motion-icon{animation-delay:.45s}
+.motion-card:nth-child(5) .motion-icon{animation-delay:.6s}
+.motion-card:nth-child(6) .motion-icon{animation-delay:.75s}
+.motion-card strong{font-size:14px;letter-spacing:.12em}
+.motion-card small{color:#8f8f8f;margin-top:4px}
+@keyframes motionScroll{to{transform:translateX(-50%)}}
+@keyframes bounceSports{0%,100%{transform:translateY(0) rotate(-2deg)}50%{transform:translateY(-9px) rotate(3deg)}}
+
+
+.video-showcase{padding:95px 0 70px;background:#101318;color:#fff;overflow:hidden}
+.video-heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:28px}
+.video-heading .eyebrow{color:#a8a8a8}
+.video-heading h2{font-family:Oswald,Impact,sans-serif;font-size:clamp(44px,5vw,70px);line-height:1.02}
+.video-heading h2 span{color:var(--accent)}
+.video-heading>p{max-width:370px;color:#b8b8b8;font-size:14px}
+.video-frame{position:relative;max-width:1180px;margin:auto;border-radius:28px;overflow:hidden;border:1px solid #303640;background:#050607;box-shadow:0 30px 80px rgba(0,0,0,.3)}
+.sports-video{display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#050607}
+.video-frame::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.58) 0%,rgba(0,0,0,.12) 48%,rgba(0,0,0,.22) 100%);pointer-events:none}
+.video-overlay{position:absolute;inset:0;z-index:2;display:flex;flex-direction:column;justify-content:space-between;padding:28px}
+.video-badge{align-self:flex-start;border:1px solid rgba(255,255,255,.28);background:rgba(0,0,0,.42);backdrop-filter:blur(8px);padding:8px 12px;border-radius:999px;font-size:10px;letter-spacing:.14em;font-weight:800}
+.video-copy{max-width:520px;display:flex;flex-direction:column;gap:10px}
+.video-copy span{font-size:11px;letter-spacing:.25em;color:#ddd;font-weight:800}
+.video-copy strong{font-family:Oswald,Impact,sans-serif;font-size:clamp(42px,6vw,86px);line-height:.9;letter-spacing:-.02em}
+.video-copy small{font-size:13px;color:#dedede}
+.video-cta{align-self:flex-end;margin-top:auto;background:var(--accent);color:#fff;padding:13px 18px;border-radius:10px;font-weight:800;font-size:13px;box-shadow:0 8px 20px rgba(229,28,35,.25)}
+.video-sports{display:flex;justify-content:center;gap:12px;flex-wrap:wrap;margin-top:18px}
+.video-sports span{padding:9px 14px;border-radius:999px;background:#1b2027;border:1px solid #303640;color:#ddd;font-size:12px;font-weight:700}
+
+
+.video-fallback{position:absolute;inset:auto 22px 22px 22px;z-index:4;display:none;max-width:470px;padding:17px 18px;border-radius:15px;background:rgba(0,0,0,.82);border:1px solid rgba(255,255,255,.22);backdrop-filter:blur(10px);box-shadow:0 10px 35px rgba(0,0,0,.25)}
+.video-fallback.show{display:flex;flex-direction:column;gap:5px}
+.video-fallback-icon{width:33px;height:33px;border-radius:50%;display:grid;place-items:center;background:var(--accent);font-size:13px;font-weight:900;margin-bottom:3px}
+.video-fallback strong{font-size:14px}
+.video-fallback span{font-size:12px;color:#c7c7c7;line-height:1.45}
+.video-fallback-link{margin-top:5px;color:#fff;font-size:12px;font-weight:800;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:900px){
+  .nav{gap:16px}
+  .hero-grid,.wholesale-grid,.about-grid,.contact-card{grid-template-columns:1fr}
+  .video-heading{display:block}.video-heading>p{margin-top:14px}
+  .hero-art{min-height:430px}
+  .section-heading{display:block}
+  .heading-note{margin-top:15px}
+  .category-grid{grid-template-columns:repeat(2,1fr)}
+  .contact-copy h2{font-size:52px}
+  .footer-grid{grid-template-columns:1fr}
+}
+@media(max-width:700px){
+  .nav{display:none;position:absolute;top:78px;left:0;right:0;background:#f6f6f2;border-bottom:1px solid #ddd;padding:18px 4%;flex-direction:column;align-items:flex-start}
+  .nav.open{display:flex}
+  .menu-toggle{display:block}
+  .brand span{font-size:17px}
+  .hero{padding-top:65px}
+  .hero h1{font-size:60px}
+  .hero-text{font-size:16px}
+  .stats{gap:18px;flex-wrap:wrap}
+  .art-ring{width:300px;height:300px}
+  .art-card{width:330px}
+  .sports-word{font-size:52px}
+  .floating-card{display:none}
+  .category-grid{grid-template-columns:1fr}
+  .section{padding:78px 0}
+  .contact-form,.contact-copy{padding:35px 25px}
+  .video-showcase{padding:75px 0 55px}.video-overlay{padding:18px}.video-copy strong{font-size:48px}.video-cta{font-size:12px;padding:11px 14px}
+  .form-row{grid-template-columns:1fr}
+}
+
+
+/* Full visual hero carousel: occupies the right half of the hero without a small centered square. */
+.hero-art{position:relative;min-height:560px;display:flex;align-items:stretch;justify-content:stretch}
+.hero-carousel{position:relative;width:100%;height:560px;overflow:hidden;background:#07090b;border-left:1px solid rgba(255,255,255,.10);box-shadow:0 28px 70px rgba(0,0,0,.16)}
+.hero-slides{height:100%;position:relative}
+.hero-slide{position:absolute;inset:0;opacity:0;transition:opacity .45s ease;pointer-events:none}
+.hero-slide.active{opacity:1;pointer-events:auto}
+.hero-slide img,.hero-slide-video{width:100%;height:100%;object-fit:cover;display:block}
+.hero-slide::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.56) 0%,rgba(0,0,0,.14) 60%,rgba(0,0,0,.18) 100%);pointer-events:none}
+.hero-slide-caption{position:absolute;left:26px;bottom:28px;z-index:4;display:flex;flex-direction:column;gap:5px;color:#fff;text-shadow:0 2px 12px rgba(0,0,0,.5)}
+.hero-slide-caption b{font-family:Oswald,Impact,sans-serif;font-size:clamp(32px,4vw,58px);line-height:1;letter-spacing:.03em}
+.hero-slide-caption span{font-size:11px;letter-spacing:.16em;font-weight:800;text-transform:uppercase}
+.carousel-arrow{position:absolute;top:50%;z-index:7;transform:translateY(-50%);width:42px;height:42px;border-radius:50%;border:1px solid rgba(255,255,255,.55);background:rgba(0,0,0,.38);color:#fff;font-size:32px;line-height:1;display:grid;place-items:center;cursor:pointer;backdrop-filter:blur(8px);transition:.2s}
+.carousel-arrow:hover{background:var(--accent);border-color:var(--accent)}
+.carousel-prev{left:16px}.carousel-next{right:16px}
+.carousel-dots{position:absolute;right:24px;bottom:27px;z-index:7;display:flex;gap:7px}
+.carousel-dot{width:8px;height:8px;border:0;border-radius:50%;padding:0;background:rgba(255,255,255,.42);cursor:pointer}
+.carousel-dot.active{width:25px;border-radius:999px;background:#fff}
+.carousel-progress{position:absolute;left:0;top:0;height:3px;background:var(--accent);z-index:8;width:0}
+.hero-video-fallback{position:absolute;z-index:5;left:25px;top:25px;display:none;flex-direction:column;gap:3px;max-width:260px;padding:11px 13px;border-radius:11px;background:rgba(0,0,0,.82);border:1px solid rgba(255,255,255,.18);color:#fff;font-size:12px}
+.hero-video-fallback.show{display:flex}
+
+@media (max-width:900px){
+  .hero-art{min-height:400px}
+  .hero-carousel{height:400px}
+  .hero-slide-caption{left:20px;bottom:22px}
+  .hero-slide-caption b{font-size:38px}
+}
+@media (max-width:700px){
+  .hero-art{min-height:340px}
+  .hero-carousel{height:340px}
+  .hero-slide-caption b{font-size:30px}
+  .hero-slide-caption span{font-size:9px}
+  .carousel-arrow{width:36px;height:36px;font-size:27px}
+}
+
+
+.product-category-card{cursor:pointer}
+.product-category-card:focus{outline:3px solid rgba(229,28,35,.2);outline-offset:3px}
+.category-action{display:inline-flex;align-items:center;gap:6px;margin-top:20px;color:var(--accent);font-size:13px;font-weight:900}
+.category-action b{font-size:16px}
+.modal-open{overflow:hidden}
+.products-modal{position:fixed;inset:0;z-index:150;display:none}
+.products-modal.open{display:block}
+.products-backdrop{position:absolute;inset:0;background:rgba(0,0,0,.64);backdrop-filter:blur(6px)}
+.products-dialog{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1180px,94vw);height:min(88vh,900px);overflow:auto;background:#f5f5f1;border-radius:28px;padding:30px;border:1px solid #ddd;box-shadow:0 30px 100px rgba(0,0,0,.38)}
+.products-close{position:absolute;right:18px;top:14px;width:40px;height:40px;border:0;border-radius:50%;background:#111;color:white;font-size:27px;cursor:pointer}
+.products-dialog-head{display:flex;align-items:end;justify-content:space-between;gap:28px;padding:0 48px 23px 3px;border-bottom:1px solid #ddd}
+.products-dialog-head h2{font-family:Oswald,Impact,sans-serif;font-size:58px;line-height:1}
+.products-dialog-head>div>p:last-child{margin-top:8px;color:#666}
+.products-enquiry-btn{border:0;background:var(--accent);color:white;padding:14px 18px;border-radius:10px;font-weight:900;cursor:pointer}
+.product-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;padding-top:22px}
+.product-card{background:#fff;border:1px solid #e0e0db;border-radius:16px;overflow:hidden;transition:.2s}
+.product-card:hover{transform:translateY(-3px);box-shadow:0 16px 35px rgba(0,0,0,.09)}
+.product-photo{aspect-ratio:1.25/1;background:#fafaf8;padding:8px}
+.product-photo img{width:100%;height:100%;object-fit:cover;border-radius:10px}
+.product-info{padding:12px 13px 14px}
+.product-info h3{font-size:14px;min-height:38px}
+.product-ask{width:100%;margin-top:8px;padding:9px 11px;border:1px solid var(--accent);background:white;color:var(--accent);font-weight:800;border-radius:8px;cursor:pointer}
+.product-ask:hover{background:var(--accent);color:white}
+@media(max-width:900px){.products-dialog-head{display:block}.products-enquiry-btn{margin-top:14px}.product-grid{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:700px){.products-dialog{height:92vh;padding:20px;border-radius:20px}.products-dialog-head h2{font-size:42px}.product-grid{gap:10px}.product-info h3{font-size:13px}}
+
+
+.product-photo{position:relative}
+.photo-badge{position:absolute;top:10px;left:10px;background:rgba(0,0,0,.78);color:#fff;border:1px solid rgba(255,255,255,.18);padding:6px 8px;border-radius:999px;font-size:8px;font-weight:900;letter-spacing:.1em}
+.product-brand{display:block;font-size:10px;letter-spacing:.14em;color:#777;font-weight:900;text-transform:uppercase;margin-bottom:4px}
+.product-photo.image-error{background:linear-gradient(135deg,#eeeeea,#deded9);display:grid;place-items:center}
+.product-photo.image-error::after{content:"Product photo unavailable";position:absolute;color:#666;font-size:11px;font-weight:800;text-align:center;padding:12px}
+.product-photo.image-error img{opacity:0}
+
+
+.catalog-empty{grid-column:1/-1;min-height:260px;display:grid;place-items:center;text-align:center;background:#fff;border:1px dashed #cfcfc8;border-radius:18px;padding:35px}
+.catalog-empty-icon{width:52px;height:52px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff;font-weight:900;margin-bottom:10px}
+.catalog-empty h3{font-family:Oswald,Impact,sans-serif;font-size:34px}
+.catalog-empty p{color:#666;max-width:520px;margin:8px auto 16px;font-size:14px}
+
+
+.product-photo .photo-source{position:absolute;right:10px;top:10px;padding:5px 8px;border-radius:999px;background:rgba(255,255,255,.92);color:#222;font-size:8px;font-weight:800;text-decoration:none;z-index:2}
+.product-photo .photo-source:hover{color:var(--accent)}
+
+
+/* Customer account + commerce UI */
+.top-action{border:1px solid #d5d5cf;background:#fff;color:#111;border-radius:999px;padding:9px 12px;font:inherit;font-size:11px;font-weight:800;cursor:pointer}
+.top-action:hover{border-color:#111}
+.cart-top span{display:inline-grid;place-items:center;min-width:20px;height:20px;margin-left:3px;border-radius:50%;background:var(--accent);color:#fff;font-size:10px}
+.auth-gate{position:fixed;inset:0;z-index:300;display:flex;align-items:center;justify-content:center}
+.auth-gate.hidden{display:none}
+.auth-backdrop,.cart-backdrop,.account-backdrop,.orders-backdrop,.checkout-backdrop{position:absolute;inset:0;background:rgba(5,5,5,.68);backdrop-filter:blur(9px)}
+.auth-card{position:relative;width:min(470px,92vw);max-height:92vh;overflow:auto;background:#fff;border-radius:26px;padding:30px;box-shadow:0 35px 100px rgba(0,0,0,.4);border:1px solid #ddd}
+.auth-brand{display:flex;align-items:center;gap:12px;margin-bottom:20px}
+.auth-mark{width:46px;height:46px;border-radius:14px;background:#111;color:#fff;display:grid;place-items:center;font:900 28px Oswald,Impact,sans-serif;border-bottom:4px solid var(--accent)}
+.auth-brand strong{display:block;font-size:14px;letter-spacing:.1em}.auth-brand small{display:block;color:#777;font-size:11px}
+.auth-tabs{display:grid;grid-template-columns:1fr 1fr;gap:6px;padding:5px;background:#efefeb;border-radius:12px;margin-bottom:20px}
+.auth-tab{border:0;background:transparent;padding:11px;border-radius:9px;font-weight:800;cursor:pointer}
+.auth-tab.active{background:#fff;box-shadow:0 3px 12px rgba(0,0,0,.08)}
+.auth-panel{display:none}.auth-panel.active{display:block}
+.auth-panel h2,.account-panel h2,.orders-panel h2,.checkout-card h2{font-family:Oswald,Impact,sans-serif;font-size:44px;line-height:1;margin-bottom:8px}
+.auth-sub,.checkout-note{font-size:13px;color:#666;margin-bottom:18px}
+.auth-form{display:grid;gap:10px}.auth-form label{font-size:11px;font-weight:800;color:#555}.auth-form input{margin:6px 0 0}
+.auth-link-btn{border:0;background:none;text-decoration:underline;cursor:pointer;font:inherit;font-size:11px}
+.auth-message{min-height:16px;margin-top:7px;font-size:12px;font-weight:800;color:#a11118}.auth-message.success{color:#246b3d}
+.auth-preview-btn{width:100%;border:1px solid #ccc;background:#fff;border-radius:10px;padding:11px;font-weight:800;cursor:pointer}
+.auth-firebase-note{margin-top:12px;padding:9px 11px;border-radius:10px;background:#f3f4f4;color:#555;font-size:10px;font-weight:800}
+#firebaseStatus.ok{color:#1f6c3b}#firebaseStatus.error{color:#a11118}
+.cart-drawer,.account-drawer,.orders-drawer{position:fixed;inset:0;z-index:290;display:none}.cart-drawer.open,.account-drawer.open,.orders-drawer.open{display:block}
+.cart-panel,.account-panel,.orders-panel{position:absolute;right:0;top:0;bottom:0;width:min(470px,95vw);background:#fff;padding:30px;overflow:auto;box-shadow:-25px 0 70px rgba(0,0,0,.22)}
+.drawer-close{position:absolute;right:17px;top:13px;width:40px;height:40px;border:0;border-radius:50%;background:#111;color:#fff;font-size:25px;cursor:pointer}
+.cart-panel h2,.account-panel h2,.orders-panel h2{margin-bottom:20px}
+.cart-items{display:grid;gap:12px}
+.cart-item{display:grid;grid-template-columns:70px 1fr auto;gap:10px;align-items:center;border-bottom:1px solid #e1e1dc;padding-bottom:12px}
+.cart-item img{width:70px;height:65px;object-fit:cover;border-radius:10px;background:#fafaf8}
+.cart-item-main small,.product-brand{display:block;color:#777;font-size:10px;text-transform:uppercase;letter-spacing:.09em;font-weight:800}
+.cart-item-main strong{display:block;font-size:13px;line-height:1.25;margin:3px 0}
+.cart-item-main span{font-size:11px;color:#666}.cart-line-total{font-size:13px}
+.qty-controls{display:flex;align-items:center;gap:6px;margin-top:7px}.qty-controls button{border:1px solid #ccc;background:#fff;border-radius:7px;min-width:26px;height:26px;cursor:pointer}.qty-controls b{font-size:12px}.qty-controls .remove-cart{border:0;color:#b11118;font-size:10px;background:none;width:auto}
+.cart-summary{position:sticky;bottom:0;background:#fff;border-top:1px solid #ddd;padding-top:16px;margin-top:18px}.cart-summary>div{display:flex;justify-content:space-between;align-items:center;font-size:14px;margin-bottom:8px}.cart-summary small{display:block;color:#777;font-size:11px;margin-bottom:12px}
+.empty-state{text-align:center;padding:35px 15px;background:#fff;border:1px dashed #d0d0c9;border-radius:16px}.empty-icon{font-size:34px;margin-bottom:8px}.empty-state h3{font-size:20px}.empty-state p{color:#777;font-size:12px;margin-top:5px}
+.account-avatar{width:74px;height:74px;border-radius:50%;background:#111;color:#fff;display:grid;place-items:center;font:900 38px Oswald,Impact,sans-serif;margin-bottom:20px}
+.account-info{border-top:1px solid #ddd;margin:20px 0}.account-info>div{padding:14px 0;border-bottom:1px solid #ddd}.account-info span{display:block;color:#777;font-size:10px;text-transform:uppercase;font-weight:800}.account-info strong{display:block;margin-top:4px;font-size:14px;word-break:break-word}
+.account-actions{display:grid;gap:10px}
+.orders-list{display:grid;gap:12px}.order-card{background:#f7f7f4;border:1px solid #ddd;border-radius:14px;padding:15px}.order-head{display:flex;justify-content:space-between;gap:10px;font-size:12px}.order-status{color:#1f6c3b;font-weight:900}.order-items{margin:12px 0;border-top:1px solid #ddd}.order-items div{display:flex;justify-content:space-between;gap:10px;padding:8px 0;border-bottom:1px solid #e3e3de;font-size:11px}.order-foot{display:flex;justify-content:space-between;margin-top:12px;font-weight:900;font-size:13px}
+.checkout-modal{position:fixed;inset:0;z-index:310;display:none}.checkout-modal.open{display:block}
+.checkout-card{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(1030px,95vw);max-height:92vh;overflow:auto;background:#f6f6f2;border-radius:28px;padding:32px;box-shadow:0 35px 100px rgba(0,0,0,.4)}
+.checkout-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:25px}
+.checkout-form{display:grid;gap:10px}.checkout-form input{margin:0}
+.cod-option{display:flex;align-items:center;gap:8px;background:#fff;border:1px solid #ddd;border-radius:11px;padding:13px;font-size:13px;font-weight:800}
+.checkout-summary{background:#111;color:#fff;border-radius:20px;padding:22px;height:max-content;position:sticky;top:0}
+.checkout-summary h3{font-family:Oswald,Impact,sans-serif;font-size:32px;margin-bottom:14px}.summary-line{display:flex;justify-content:space-between;gap:15px;padding:10px 0;border-bottom:1px solid #2f2f2f;font-size:12px}.summary-total{display:flex;justify-content:space-between;font-size:17px;font-weight:900;padding-top:15px}.demo-price{display:block;color:#a11118;font-size:9px;margin-top:4px}.product-price{font-size:18px;font-weight:900;margin-top:6px}
+.product-actions{display:grid;grid-template-columns:1fr 1fr;gap:7px;margin-top:10px}.product-add,.product-buy{border-radius:8px;padding:9px 7px;font-size:11px;font-weight:900;cursor:pointer}.product-add{border:1px solid var(--accent);background:#fff;color:var(--accent)}.product-buy{border:1px solid var(--accent);background:var(--accent);color:#fff}
+.img-error{opacity:0}
+@media(max-width:900px){.checkout-grid{grid-template-columns:1fr}.checkout-summary{position:static}.nav .top-action{padding:8px 10px}}
+@media(max-width:700px){.auth-card{padding:23px}.cart-panel,.account-panel,.orders-panel{padding:24px}.checkout-card{padding:22px}.form-row{grid-template-columns:1fr}}
+
+.speed-note{font-size:10px;color:#666;background:#f4f4f1;border:1px solid #e4e4df;border-radius:8px;padding:7px 9px;margin-bottom:12px}
+
+
+.billing-fields.hidden{display:none}
+.checkout-subtitle{font-size:14px;font-weight:900;margin:4px 0 2px}
+.same-billing{display:flex;align-items:center;gap:9px;background:#fff;border:1px solid #ddd;padding:12px;border-radius:10px;font-size:12px;font-weight:800}
+.same-billing input{width:auto;margin:0}
+.product-card .product-photo img{transition:opacity .2s}
+.top-action{white-space:nowrap}
+@media(max-width:900px){.nav{flex-wrap:wrap}.top-action{padding:8px 10px}}
+@media(max-width:700px){.top-action{font-size:10px}.checkout-subtitle{font-size:13px}}
+
+</style>
+<link rel="preconnect" href="https://www.gstatic.com" crossorigin>
+</head>
+<body>
+
+  <header class="site-header" id="top">
+    <div class="container nav-wrap">
+      <a class="brand" href="#top" aria-label="Prozivo Sports home">
+        <img src="assets/prozivo-logo.webp" alt="Prozivo Sports logo" />
+        <span>PROZIVO <b>SPORTS</b></span>
+      </a>
+
+      <button class="menu-toggle" aria-label="Open menu" aria-expanded="false">☰</button>
+
+      <nav class="nav">
+        <a href="#home">Home</a>
+        <a href="#categories">Categories</a>
+        <a href="#wholesale">Wholesale</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="top-action" id="accountOpenBtn" type="button">👤 My Account</button>
+        <button class="top-action cart-top" id="cartOpenBtn" type="button">🛒 Cart <span data-cart-count>0</span></button>
+        
+        <a class="nav-cta" href="#contact">Get In Touch</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-glow glow-one"></div>
+      <div class="hero-glow glow-two"></div>
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">WHOLESALE • RETAIL • SPORTS GEAR</p>
+          <h1>Gear Up.<br><span>Play Strong.</span></h1>
+          <p class="hero-text">
+            Your trusted destination for sports equipment, accessories and gear — with cricket, football, badminton, volleyball, fitness and more.
+            From individual players to retailers and institutions, Prozivo Sports
+            is built to serve every level of sport.
+          </p>
+          <div class="hero-actions">
+            <a href="#categories" class="btn btn-primary">Explore Categories</a>
+            <a href="#wholesale" class="btn btn-outline">Wholesale Enquiry</a>
+          </div>
+          <div class="stats">
+            <div><strong>WHolesale</strong><span>Bulk supply</span></div>
+            <div><strong>Retail</strong><span>Player-ready gear</span></div>
+            <div><strong>Support</strong><span>Personal assistance</span></div>
+          </div>
+        </div>
+
+        <div class="hero-art">
+          <div class="hero-carousel" aria-label="Prozivo Sports visual showcase">
+  <button type="button" class="carousel-arrow carousel-prev" aria-label="Previous slide">‹</button>
+  <div class="hero-slides">
+    <div class="hero-slide active">
+  <img src="assets/sports-hero.webp" alt="Prozivo Sports multi-sport showcase" decoding="async" fetchpriority="high">
+  <div class="hero-slide-caption"><b>PROZIVO SPORTS</b><span>Sports Gear • Wholesale • Retail</span></div>
+</div><div class="hero-slide">
+  <img src="assets/cricket.webp" alt="Cricket sports action" loading="lazy" decoding="async">
+  <div class="hero-slide-caption"><b>CRICKET</b><span>POWER • PRECISION</span></div>
+</div><div class="hero-slide">
+  <img src="assets/football.webp" alt="Football sports action" loading="lazy" decoding="async">
+  <div class="hero-slide-caption"><b>FOOTBALL</b><span>SPEED • TEAMWORK</span></div>
+</div><div class="hero-slide">
+  <img src="assets/badminton.webp" alt="Badminton sports action" loading="lazy" decoding="async">
+  <div class="hero-slide-caption"><b>BADMINTON</b><span>AGILITY • CONTROL</span></div>
+</div><div class="hero-slide">
+  <img src="assets/volleyball.webp" alt="Volleyball sports action" loading="lazy" decoding="async">
+  <div class="hero-slide-caption"><b>VOLLEYBALL</b><span>JUMP • SPIKE</span></div>
+</div><div class="hero-slide hero-video-slide">
+  <video class="hero-slide-video" autoplay muted loop playsinline preload="none" poster="assets/sports-hero.webp" aria-label="Muted autoplay Prozivo Sports video">
+    <source data-src="assets/sports-showcase.mp4" type="video/mp4">
+  </video>
+  <div class="hero-video-fallback">
+    <strong>Sports video unavailable</strong>
+    <span>The poster image is shown instead.</span>
+  </div>
+  <div class="hero-slide-caption"><b>SPORTS IN MOTION</b><span>Cricket • Football • Volleyball • Badminton</span></div>
+</div>
+  </div>
+  <button type="button" class="carousel-arrow carousel-next" aria-label="Next slide">›</button>
+  <div class="carousel-progress" aria-hidden="true"></div>
+  <div class="carousel-dots" role="tablist" aria-label="Sports slides">
+    <button type="button" class="carousel-dot active" data-slide="0" aria-label="Go to slide 1"></button><button type="button" class="carousel-dot" data-slide="1" aria-label="Go to slide 2"></button><button type="button" class="carousel-dot" data-slide="2" aria-label="Go to slide 3"></button><button type="button" class="carousel-dot" data-slide="3" aria-label="Go to slide 4"></button><button type="button" class="carousel-dot" data-slide="4" aria-label="Go to slide 5"></button><button type="button" class="carousel-dot" data-slide="5" aria-label="Go to slide 6"></button>
+  </div>
+</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="marquee" aria-label="Prozivo Sports services">
+      <div class="marquee-track">
+        <span>CRICKET</span><i>✦</i><span>FOOTBALL</span><i>✦</i><span>BADMINTON</span><i>✦</i><span>BASKETBALL</span><i>✦</i><span>TENNIS</span><i>✦</i><span>FITNESS</span><i>✦</i>
+        <span>CRICKET</span><i>✦</i><span>FOOTBALL</span><i>✦</i><span>BADMINTON</span><i>✦</i><span>BASKETBALL</span><i>✦</i><span>TENNIS</span><i>✦</i><span>FITNESS</span><i>✦</i>
+      </div>
+    </section>
+
+    
+    <section class="motion-section" aria-label="Popular sports">
+      <div class="container">
+        <div class="motion-heading">
+          <div>
+            <p class="eyebrow">SPORTS IN MOTION</p>
+            <h2>Pick your <span>game.</span></h2>
+          </div>
+          <p>Cricket, football, volleyball and badminton — always in motion.</p>
+        </div>
+        <div class="motion-rail">
+          <div class="motion-card"><div class="motion-icon cricket-ball">🏏</div><strong>CRICKET</strong><small>Power • Precision</small></div>
+          <div class="motion-card"><div class="motion-icon football-ball">⚽</div><strong>FOOTBALL</strong><small>Speed • Teamwork</small></div>
+          <div class="motion-card"><div class="motion-icon volley-ball">🏐</div><strong>VOLLEYBALL</strong><small>Jump • Spike</small></div>
+          <div class="motion-card"><div class="motion-icon badminton-racket">🏸</div><strong>BADMINTON</strong><small>Agility • Control</small></div>
+          <div class="motion-card"><div class="motion-icon fitness-icon">🏋️</div><strong>FITNESS</strong><small>Strength • Focus</small></div>
+          <div class="motion-card"><div class="motion-icon tennis-ball">🎾</div><strong>TENNIS</strong><small>Speed • Skill</small></div>
+        </div>
+      </div>
+    </section>
+
+<section class="section" id="categories">
+      <div class="container">
+        <div class="section-heading">
+          <div>
+            <p class="eyebrow">SHOP BY SPORT</p>
+            <h2>Everything you need to <span>play better.</span></h2>
+          </div>
+          <p class="heading-note">A clean category structure ready for your online catalog.</p>
+        </div>
+
+        <div class="category-grid">
+          <article class="category-card cricket product-category-card" data-sport="Cricket" tabindex="0" role="button" aria-label="View Cricket equipment">
+            <div class="category-icon">🏏</div>
+            <h3>Cricket</h3>
+            <p>Bats, balls, gloves, pads, helmets & accessories.</p>
+            <span class="category-action">View Equipment <b>→</b></span>
+          </article>
+
+          <article class="category-card football product-category-card" data-sport="Football" tabindex="0" role="button" aria-label="View Football equipment">
+            <div class="category-icon">⚽</div>
+            <h3>Football</h3>
+            <p>Football, shoes, jerseys, goalkeeper gear & more.</p>
+            <span class="category-action">View Equipment <b>→</b></span>
+          </article>
+
+          <article class="category-card badminton product-category-card" data-sport="Badminton" tabindex="0" role="button" aria-label="View Badminton equipment">
+            <div class="category-icon">🏸</div>
+            <h3>Badminton</h3>
+            <p>Rackets, shuttlecocks, nets, grips & court essentials.</p>
+            <span class="category-action">View Equipment <b>→</b></span>
+          </article>
+
+          <article class="category-card fitness product-category-card catalog-coming-soon" data-sport="Fitness" tabindex="0" role="button" aria-label="View Fitness equipment">
+            <div class="category-icon">🏋️</div>
+            <h3>Fitness</h3>
+            <p>Dumbbells, resistance gear, yoga & training accessories.</p>
+            <span class="category-action">View Equipment <b>→</b></span>
+          </article>
+
+          <article class="category-card basketball product-category-card" data-sport="Basketball" tabindex="0" role="button" aria-label="View Basketball equipment">
+            <div class="category-icon">🏀</div>
+            <h3>Basketball</h3>
+            <p>Balls, hoops, training gear and team accessories.</p>
+            <span class="category-action">View Equipment <b>→</b></span>
+          </article>
+
+          <article class="category-card tennis product-category-card catalog-coming-soon" data-sport="Tennis" tabindex="0" role="button" aria-label="View Tennis equipment">
+            <div class="category-icon">🎾</div>
+            <h3>Tennis</h3>
+            <p>Rackets, balls, bags, strings and accessories.</p>
+            <span class="category-action">View Equipment <b>→</b></span>
+          </article>
+        
+          <article class="category-card volleyball product-category-card" data-sport="Volleyball" tabindex="0" role="button" aria-label="View Volleyball equipment">
+            <div class="category-icon">🏐</div>
+            <h3>Volleyball</h3>
+            <p>Volleyballs, nets, training gear and court essentials.</p>
+            <span class="category-action">View Equipment <b>→</b></span>
+          </article>
+          <article class="category-card table-tennis product-category-card" data-sport="Table Tennis" tabindex="0" role="button" aria-label="View Table Tennis equipment">
+            <div class="category-icon">🏓</div>
+            <h3>Table Tennis</h3>
+            <p>Table tennis bats and related equipment.</p>
+            <span class="category-action">View Equipment <b>→</b></span>
+          </article>
+        
+      </div>
+    </section>
+<div class="products-modal" id="productsModal" aria-hidden="true">
+  <div class="products-backdrop" data-close-products></div>
+  <div class="products-dialog" role="dialog" aria-modal="true" aria-labelledby="productsModalTitle">
+    <button class="products-close" type="button" aria-label="Close equipment list" data-close-products>×</button>
+    <div class="products-dialog-head">
+      <div>
+        <p class="eyebrow">PROZIVO SPORTS • EQUIPMENT</p>
+        <h2 id="productsModalTitle">Sports Equipment</h2>
+        <p id="productsModalDesc">Select a product to enquire.</p>
+      </div>
+      <button type="button" class="products-enquiry-btn" id="productEnquiryBtn">Bulk / Wholesale Enquiry →</button>
+    </div>
+    <div class="product-grid" id="productGrid"></div>
+  </div>
+</div>
+
+
+    <section class="section dark-section" id="wholesale">
+      <div class="container wholesale-grid">
+        <div>
+          <p class="eyebrow">FOR BUSINESS</p>
+          <h2>Wholesale that <span>moves with you.</span></h2>
+          <p class="section-text">
+            Built for retailers, academies, schools, clubs, gyms and sports
+            organizations. Share your requirements and get a tailored bulk quote.
+          </p>
+          <div class="feature-list">
+            <div><span>01</span><div><b>Bulk Orders</b><small>Quantity-based sourcing for your business.</small></div></div>
+            <div><span>02</span><div><b>Retail Support</b><small>Products selected for customer demand.</small></div></div>
+            <div><span>03</span><div><b>Flexible Enquiries</b><small>Tell us your sport, quantity and budget.</small></div></div>
+            <div><span>04</span><div><b>Pan-India Ready</b><small>Designed for scalable distribution.</small></div></div>
+          </div>
+          <a href="#contact" class="btn btn-primary">Request Wholesale Quote</a>
+        </div>
+
+        <div class="quote-panel">
+          <div class="quote-top">PROZIVO SPORTS</div>
+          <blockquote>“The right gear doesn't just support performance — it builds confidence.”</blockquote>
+          <div class="quote-bottom">
+            <span>WHOLESALE</span>
+            <span>RETAIL</span>
+            <span>TEAM SUPPLY</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="about">
+      <div class="container about-grid">
+        <div class="about-logo-wrap">
+          <img src="assets/prozivo-logo.webp" alt="Prozivo Sports" class="about-logo" />
+        </div>
+        <div>
+          <p class="eyebrow">ABOUT PROZIVO SPORTS</p>
+          <h2>A sports partner for <span>players and businesses.</span></h2>
+          <p class="section-text">
+            Prozivo Sports combines a professional retail experience with a
+            business-friendly wholesale model. The goal is simple: make quality
+            sports gear easier to source, compare and buy.
+          </p>
+
+          <div class="pill-row">
+            <span>Genuine Products</span>
+            <span>Wholesale & Retail</span>
+            <span>Sports for Everyone</span>
+            <span>Business Support</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact-section" id="contact">
+      <div class="container">
+        <div class="contact-card">
+          <div class="contact-copy">
+            <p class="eyebrow">LET'S CONNECT</p>
+            <h2>Ready to stock up?</h2>
+            <p>Send your requirement for retail purchase, bulk order, dealership or sports supply.</p>
+            <div class="contact-items">
+              <a href="tel:+919999999999"><span>☎</span> +91 93046 55747</a>
+              <a href="mailto:prozivosports@gmail.com"><span>✉</span> prozivosports@gmail.com</a>
+              <a href="#"><span>⌖</span> Rohini Nagar, Jakariyapur, New Bypass, Patna, Bihar - 800007</a>
+            </div>
+            <div class="social-row">
+              <a href="https://www.instagram.com/prozivosports/" target="_blank" rel="noopener" aria-label="Instagram">Instagram</a>
+              <a href="#" aria-label="Facebook">Facebook</a>
+              <a href="#" aria-label="WhatsApp">WhatsApp</a>
+            </div>
+          </div>
+
+          <form class="contact-form" action="https://formsubmit.co/prozivosports@gmail.com" method="POST">
+            <input type="hidden" name="_subject" value="New Enquiry - Prozivo Sports">
+            <input type="hidden" name="_template" value="table">
+            <input type="hidden" name="_captcha" value="true">
+            <input type="hidden" name="_honey" value="" style="display:none">
+
+            <div class="form-row">
+              <input type="text" name="name" placeholder="Your name" required />
+              <input type="text" name="business" placeholder="Business / shop name" />
+            </div>
+            <div class="form-row">
+              <input type="tel" name="phone" placeholder="Phone number" required />
+              <input type="email" name="email" placeholder="Your email address" />
+            </div>
+            <div class="form-row">
+              <select name="type">
+                <option value="">I am looking for...</option>
+                <option>Retail purchase</option>
+                <option>Wholesale order</option>
+                <option>Team / Academy supply</option>
+                <option>Dealership / Distribution</option>
+              </select>
+            </div>
+            <textarea name="message" placeholder="Tell us what you need (sport, products, quantity, etc.)" rows="5"></textarea>
+            <button type="submit" class="btn btn-primary btn-full">Send Enquiry</button>
+            <p class="form-note">Your enquiry will be sent directly to Prozivo Sports by email.</p>
+            </form>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="#top">
+          <img src="assets/prozivo-logo.webp" alt="" />
+          <span>PROZIVO <b>SPORTS</b></span>
+        </a>
+        <p>Wholesale • Retail • Sports Gear</p>
+      </div>
+      <div class="footer-links">
+        <a href="#categories">Categories</a>
+        <a href="#wholesale">Wholesale</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+        <button class="top-action" id="accountOpenBtn" type="button">👤 My Account</button>
+        <button class="top-action cart-top" id="cartOpenBtn" type="button">🛒 Cart <span data-cart-count>0</span></button>
+        
+      </div>
+      <div class="copyright">© <span id="year"></span> Prozivo Sports. All rights reserved.</div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-fab" href="https://wa.me/919304655747" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">WA</a>
+
+  <script>
+
+// PROZIVO SPORTS front-end interactions
+const PRODUCT_CATALOG = {"Cricket":[{"brand":"SS","name":"SS TON Player Edition Cricket Bat","image":"https://cdn.shopify.com/s/files/1/0624/1111/2615/files/image3_bbe5e1d7-91f5-4ca3-9546-80bb1189131c.png?v=1740562333","source":"https://cricketstoreonline.com/blogs/articles/dominate-the-game-with-the-ss-ton-player-edition-cricket-bat","price":2999,"currency":"INR"},{"brand":"SG","name":"SG HP 150 Cricket Bat","image":"https://usacricketgear.com/cdn/shop/files/HP-150_7.webp?v=1764023071&width=1946","source":"https://usacricketgear.com/products/sg-hp-150-english-willow-cricket-bat","price":2999,"currency":"INR"},{"brand":"MRF","name":"MRF Genius 360 English Willow Cricket Bat","image":"https://www.cricketshopitaly.com/cdn/shop/files/MRFGenius360EnglishWillowCricketBat_3_1200x.jpg?v=1766572365","source":"https://www.cricketshopitaly.com/products/mrf-genuis-360-english-willow-cricket-bat","price":2999,"currency":"INR"},{"brand":"DSC","name":"DSC Blak 100 English Willow Cricket Bat 2025 Edition","image":"https://wizsports.com.au/cdn/shop/files/dsc-blak-100-english-willow-cricket-bat-2025-edition-sh-cricket-bats-865905.png?v=1746108311","source":"https://wizsports.com.au/products/dsc-blak-100-english-willow-cricket-bat-2025-edition-sh","price":2999,"currency":"INR"},{"brand":"SS","name":"SS TON Slasher Cricket Bat 2026","image":"https://cricketstoreonline.com/cdn/shop/files/5-9-665x665.jpg?v=1738227830&width=416","source":"https://cricketstoreonline.com/products/ss-ton-slasher-cricket-bat-2026","price":2999,"currency":"INR"},{"brand":"SS","name":"SS TON Special Edition Cricket Bat 2026","image":"https://cricketstoreonline.com/cdn/shop/files/special_edition__48327.1607892714.600.600.jpg?v=1708093863&width=416","source":"https://cricketstoreonline.com/products/cricket-bats-ss-ton-special-edition-cricket-bat-2026","price":2999,"currency":"INR"},{"brand":"SG","name":"SG RSD Xtreme® English Willow Cricket Bat","image":"https://shop.teamsg.in/cdn/shop/files/01_30a8771e-1458-4c44-9791-2fd0933da087.webp?v=1784379608&width=416","source":"https://shop.teamsg.in/products/sg-rsd-xtreme-traditionally-shaped-english-willow-grade-6-cricket-bat-leather-ball","price":2999,"currency":"INR"},{"brand":"SG","name":"SG Player Xtreme English Willow Cricket Bat","image":"https://shop.teamsg.in/cdn/shop/files/01_e4160708-95fb-40d2-b6cd-69fc83359721.webp?v=1784383607&width=416","source":"https://shop.teamsg.in/products/player-xtreme","price":2999,"currency":"INR"},{"brand":"MRF","name":"MRF Genius Grand Cricket Bat","image":"https://www.thesportsstory.com/product-images/IMG_1747.jpeg/321753000004140021/300x300","source":"https://www.thesportsstory.com/collections/mrf-brand-products/321753000012452239","price":2999,"currency":"INR"},{"brand":"MRF","name":"MRF Wizard Gold Cricket Bat","image":"https://www.thesportsstory.com/product-images/WhatsApp%2BImage%2B2023-06-24%2Bat%2B5.52.17%2BPM.jpeg/321753000011170293/300x300","source":"https://www.thesportsstory.com/collections/mrf-brand-products/321753000012452239","price":2999,"currency":"INR"},{"brand":"MRF","name":"MRF Duffle Bag VK 18","image":"https://www.thesportsstory.com/product-images/3e2bf9cb-dd27-41e7-bbc7-8b11f21a981b.jpeg/321753000019558025/300x300","source":"https://www.thesportsstory.com/collections/mrf-brand-products/321753000012452239","price":1299,"currency":"INR"},{"brand":"DSC","name":"DSC Blak 4000 Cricket Bat","image":"https://www.prodirectsport.com/cdn/shop/files/1030199_main.jpg?v=1785513074&width=2000","source":"https://www.prodirectsport.com/products/dsc-blak-4000-cricket-bat-black-blue-cricket-bats-1030199","price":2999,"currency":"INR"},{"brand":"DSC","name":"DSC Blak 5000 Cricket Bat","image":"https://www.prodirectsport.com/cdn/shop/files/1030200_main.jpg?v=1784291566&width=2000","source":"https://www.prodirectsport.com/products/dsc-blak-5000-cricket-bat-black-blue-cricket-bats-1030200","price":2999,"currency":"INR"}],"Football":[{"brand":"NIVIA","name":"Nivia Rabona Pro FIFA Certified Tournament Football","image":"https://www.niviasports.com/cdn/shop/files/077A3786.jpg?v=1764142431&width=416","source":"https://www.niviasports.com/products/rabona-pro-fifa-certified-tournament-football-copy","price":799,"currency":"INR"},{"brand":"COSCO","name":"Cosco Platina FIFA S-5 Football","image":"https://www.cosco.in/uploads/r/FIFA%20PRO%201018415.jpg","source":"https://www.cosco.in/products-details/india/football/balls/platina-fifa-s5","price":799,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Nitro FIFA Certified Match Football","image":"https://niviasports.com/cdn/shop/files/077A5590.jpg?v=1758867798&width=120","source":"https://www.niviasports.com/products/nitro-fifa-certified-match-football?variant=42142231527537","price":799,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Shastra Thermobond Football","image":"https://www.niviasports.com/cdn/shop/files/077A7635.jpg?v=1763101488&width=416","source":"https://www.niviasports.com/products/nivia-shastra-thermobond-football?variant=43083317149809","price":799,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Shastra 2.0 Football Shoe Stud","image":"https://niviasports.com/cdn/shop/files/1_7698d085-109f-41e3-80f4-45e779fa5db2.jpg?v=1783138689&width=533","source":"https://niviasports.com/collections/football-footwear","price":1499,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Nitro Men's Football Studs","image":"https://niviasports.com/cdn/shop/files/NitroBlue1_aa4b553b-783e-45ab-8706-24efd48a4f77.jpg?v=1774430788&width=1445","source":"https://niviasports.com/products/nivia-nitro-football-studs","price":1499,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Ignite Football Studs","image":"https://niviasports.com/cdn/shop/files/FB-1417BG_Ignite_1_8d7bb802-3e44-41d5-b596-90380fb03884.jpg?v=1720112081&width=533","source":"https://niviasports.com/collections/football-shoes","price":1499,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Oslar 3.0 Football Studs","image":"https://niviasports.com/cdn/shop/files/FB-1656WH_Oslar_3.0_1.jpg?v=1719317262&width=533","source":"https://niviasports.com/collections/football-shoes","price":1499,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Arctic Football Stud","image":"https://niviasports.com/cdn/shop/files/1_7698d085-109f-41e3-80f4-45e779fa5db2.jpg?v=1783138689&width=533","source":"https://niviasports.com/products/arctic","price":1499,"currency":"INR"},{"brand":"COSCO","name":"Cosco Delta Force S-5 Football","image":"https://store.cosco.in/cdn/shop/products/coscob1.jpg?format=webp&v=1731582692&width=720","source":"https://store.cosco.in/collections/football/football","price":799,"currency":"INR"},{"brand":"COSCO","name":"Cosco Thunder S-5 Football","image":"https://store.cosco.in/cdn/shop/products/thunder-fb-o_60043461575_7b611fcb-24a7-4eae-8f0d-c840be29d941.jpg?format=webp&v=1731590326&width=1029","source":"https://store.cosco.in/collections/football/football","price":799,"currency":"INR"},{"brand":"COSCO","name":"Cosco Super Star S-5 Football","image":"https://store.cosco.in/cdn/shop/files/DSC9448_1.jpg?format=webp&v=1731582856&width=4000","source":"https://store.cosco.in/collections/football/football","price":799,"currency":"INR"}],"Badminton":[{"brand":"COSCO","name":"Badminton Racket CB 175 E (For training)","image":"https://store.cosco.in/cdn/shop/files/DSC5628_72f3ced4-bc0f-4750-8dea-762bdab7389b.jpg?v=1731589877&width=3840","source":"https://store.cosco.in/products/badminton-racket-cb-175-e","price":1299,"currency":"INR"},{"brand":"COSCO","name":"Badminton Racket CB 85 (Pair)","image":"https://store.cosco.in/cdn/shop/files/2_8dff7efa-7913-4d53-b390-456ca514f3a8.jpg?v=1762857115","source":"https://store.cosco.in/collections/badminton/badminton-racket","price":1299,"currency":"INR"}],"Basketball":[{"brand":"COSCO","name":"Tournament Basket Ball S-7","image":"https://store.cosco.in/cdn/shop/files/DSC0846.jpg?v=1731590637&width=3840","source":"https://store.cosco.in/products/tournament-basket-ball-7","price":999,"currency":"INR"}],"Fitness":[{"brand":"NIVIA","name":"Nivia 1KG Fitness Dumbbell - Pair","image":"https://www.niviasports.com/cdn/shop/files/077A8254.jpg?v=1764833735&width=533","source":"https://www.niviasports.com/collections/fitness-home-fitness","price":899,"currency":"INR"},{"brand":"NIVIA","name":"Nivia 3KG Fitness Dumbbell - Pair","image":"https://www.niviasports.com/cdn/shop/files/1_81148cef-6b4c-4cff-b5ea-a658a59f433a.jpg?v=1742214067&width=533","source":"https://www.niviasports.com/collections/fitness-home-fitness","price":899,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Training Power-stretch Long Loop Band Level 3","image":"https://www.niviasports.com/cdn/shop/files/4_479654c4-c493-4e83-812d-6716b0670fce.jpg?v=1764308327&width=533","source":"https://www.niviasports.com/collections/fitness-home-fitness","price":449,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Speed Rope","image":"https://www.niviasports.com/cdn/shop/files/Re-11033-1.jpg?v=1698942854&width=533","source":"https://www.niviasports.com/collections/fitness-home-fitness","price":299,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Ab Wheel 2.0","image":"https://www.niviasports.com/cdn/shop/files/Re-11032-1.jpg?v=1698942879&width=533","source":"https://www.niviasports.com/collections/fitness-home-fitness","price":499,"currency":"INR"},{"brand":"COSCO","name":"Cosco Hexa Dumbbell 10 KG","image":"https://store.cosco.in/cdn/shop/products/Untitleddesign-2021-07-21T102926.602_ce0732f8-99ad-4634-8d43-69bd8ecc3a3a.jpg?format=webp&v=1731586805&width=720","source":"https://store.cosco.in/collections/dumbbells-online-india","price":899,"currency":"INR"},{"brand":"COSCO","name":"Cosco Vinyl Dumbbells (Pair) 1 KG","image":"https://store.cosco.in/cdn/shop/files/1_b96d28d7-71a5-4867-849b-7fe8150ee026.png?format=webp&v=1731590688&width=1080","source":"https://store.cosco.in/products/vinyl-dumbbells-pair","price":899,"currency":"INR"},{"brand":"COSCO","name":"Cosco Kettlebell 10 KG","image":"https://store.cosco.in/cdn/shop/products/Untitleddesign-2021-07-24T235954.813_6404feb8-f1ad-4b0f-a935-8fe8272e4033.jpg?format=webp&v=1731586814&width=720","source":"https://store.cosco.in/collections/dumbbells-online-india","price":1299,"currency":"INR"},{"brand":"COSCO","name":"Cosco Yoga Mat Pro","image":"https://store.cosco.in/cdn/shop/files/c_purple.jpg?format=webp&v=1731585135&width=4016","source":"https://store.cosco.in/collections/commercial-gym","price":799,"currency":"INR"},{"brand":"COSCO","name":"Cosco Resistance Tube - Light","image":"https://store.cosco.in/cdn/shop/products/Untitleddesign-2021-07-21T185753.451.jpg?format=webp&v=1731585099&width=720","source":"https://store.cosco.in/products/resistance-tube-light","price":599,"currency":"INR"},{"brand":"COSCO","name":"Cosco CHG 200C Home Gym","image":"https://store.cosco.in/cdn/shop/files/preview_images/27100411b44e4247b138e396b5e07f50.thumbnail.0000000000.jpg?v=1784885485&width=3840","source":"https://store.cosco.in/collections/commercial-gym","price":6499,"currency":"INR"}],"Tennis":[{"brand":"COSCO","name":"Tennis Racket Attacker","image":"https://store.cosco.in/cdn/shop/products/Untitleddesign_93.jpg?v=1731584746&width=3840","source":"https://store.cosco.in/products/tennis-racket-attacker","price":1599,"currency":"INR"}],"Volleyball":[{"brand":"COSCO","name":"Cosco Shot VolleyBall","image":"https://store.cosco.in/cdn/shop/products/shot-volley_20754012140.jpg?v=1731582179&width=3840","source":"https://store.cosco.in/products/volleyball-cosco-shot-volley","price":799,"currency":"INR"},{"brand":"COSCO","name":"Cosco CVB 700 VolleyBall","image":"https://store.cosco.in/cdn/shop/files/Untitleddesign_1.jpg?format=webp&v=1731581851&width=1000","source":"https://store.cosco.in/collections/volleyball","price":799,"currency":"INR"},{"brand":"COSCO","name":"Cosco Smash VolleyBall","image":"https://store.cosco.in/cdn/shop/products/smash-volley-2_47689748556.jpg?format=webp&v=1731582275&width=500","source":"https://store.cosco.in/collections/volleyball","price":799,"currency":"INR"},{"brand":"NIVIA","name":"Nivia Crater Moulded Volleyball","image":"https://www.niviasports.com/cdn/shop/files/077A8206.jpg?v=1764833731&width=533","source":"https://niviasports.com/products/nivia-crater-moulded-volleyball","price":799,"currency":"INR"}],"Table Tennis":[{"brand":"STIGA (via COSCO Store)","name":"Stiga Royal Carbon *****","image":"https://store.cosco.in/cdn/shop/files/1_a2d32682-0267-47b4-8482-a642b3f4e5d0.png?format=webp&v=1731587455&width=1000","source":"https://store.cosco.in/collections/bats","price":999,"currency":"INR"},{"brand":"STIGA (via COSCO Store)","name":"Stiga Arena **","image":"https://store.cosco.in/cdn/shop/files/Untitleddesign_2_26182605-99d9-4652-9020-e1a403e51c62.png?format=webp&v=1731589722&width=1000","source":"https://store.cosco.in/collections/bats","price":999,"currency":"INR"},{"brand":"STIGA (via COSCO Store)","name":"Stiga Artist **","image":"https://store.cosco.in/cdn/shop/files/Untitleddesign_3_189ce263-b4a2-4cf1-bf36-05b18e47929e.png?format=webp&v=1731589713&width=1000","source":"https://store.cosco.in/collections/bats","price":999,"currency":"INR"}]};
+
+(() => {
+  const menuToggle = document.querySelector('.menu-toggle');
+  const nav = document.querySelector('.nav');
+  menuToggle?.addEventListener('click', () => {
+    const open = nav.classList.toggle('open');
+    menuToggle.setAttribute('aria-expanded', open ? 'true' : 'false');
+  });
+  document.querySelectorAll('.nav a').forEach(a => a.addEventListener('click', () => nav.classList.remove('open')));
+  const year = document.getElementById('year');
+  if (year) year.textContent = new Date().getFullYear();
+})();
+
+// Hero carousel
+(() => {
+  const root = document.querySelector('.hero-carousel');
+  if (!root) return;
+  const slides = [...root.querySelectorAll('.hero-slide')];
+  const dots = [...root.querySelectorAll('.carousel-dot')];
+  const prev = root.querySelector('.carousel-prev');
+  const next = root.querySelector('.carousel-next');
+  const progress = root.querySelector('.carousel-progress');
+  let index = 0, timer = null, progressTimer = null;
+  const interval = 6000;
+
+  const show = (i) => {
+    index = (i + slides.length) % slides.length;
+    slides.forEach((s,n) => s.classList.toggle('active', n===index));
+    dots.forEach((d,n) => d.classList.toggle('active', n===index));
+    const video = slides[index].querySelector('.hero-slide-video');
+    const source = video?.querySelector('source[data-src]');
+    const fallback = slides[index].querySelector('.hero-video-fallback');
+    if (video) {
+      if (source && !source.getAttribute('src')) source.setAttribute('src', source.dataset.src);
+      fallback?.classList.remove('show');
+      const play = video.play();
+      play?.catch?.(() => fallback?.classList.add('show'));
+    }
+  };
+
+  const reset = () => {
+    clearInterval(timer);
+    clearInterval(progressTimer);
+    if (progress) progress.style.width = '0%';
+    const started = performance.now();
+    progressTimer = setInterval(() => {
+      if (progress) progress.style.width = Math.min(100, ((performance.now()-started)/interval)*100) + '%';
+    }, 60);
+    timer = setInterval(() => show(index+1), interval);
+  };
+
+  prev?.addEventListener('click', () => { show(index-1); reset(); });
+  next?.addEventListener('click', () => { show(index+1); reset(); });
+  dots.forEach((d,i) => d.addEventListener('click', () => { show(i); reset(); }));
+  root.addEventListener('mouseenter', () => { clearInterval(timer); clearInterval(progressTimer); });
+  root.addEventListener('mouseleave', reset);
+
+  show(0);
+  reset();
+})();
+
+// Shopping cart
+(() => {
+  const CART_KEY = 'prozivoCartV2';
+  let cart = JSON.parse(localStorage.getItem(CART_KEY) || '[]');
+  const saveCart = () => localStorage.setItem(CART_KEY, JSON.stringify(cart));
+  const money = n => '₹' + Number(n || 0).toLocaleString('en-IN');
+  const subtotal = () => cart.reduce((s,i) => s + Number(i.price||0)*Number(i.qty||0), 0);
+  const count = () => cart.reduce((s,i) => s + Number(i.qty||0), 0);
+
+  const renderCount = () => document.querySelectorAll('[data-cart-count]').forEach(e => e.textContent = count());
+
+  const renderCart = () => {
+    const box = document.getElementById('cartItems');
+    const total = document.getElementById('cartSubtotal');
+    const checkoutBtn = document.getElementById('goCheckoutBtn');
+    if (!box) return;
+    if (!cart.length) {
+      box.innerHTML = '<div class="empty-state"><div class="empty-icon">🛒</div><h3>Your cart is empty</h3><p>Add sports equipment to start your order.</p></div>';
+      if (total) total.textContent = money(0);
+      if (checkoutBtn) checkoutBtn.disabled = true;
+      return;
+    }
+    if (checkoutBtn) checkoutBtn.disabled = false;
+    box.innerHTML = cart.map(item => `
+      <article class="cart-item">
+        <img src="${item.image}" alt="${item.name}">
+        <div class="cart-item-main">
+          <small>${item.brand || item.sport}</small>
+          <strong>${item.name}</strong>
+          <span>${money(item.price)} each</span>
+          <div class="qty-controls">
+            <button type="button" data-cart-action="minus" data-key="${item.key}">−</button>
+            <b>${item.qty}</b>
+            <button type="button" data-cart-action="plus" data-key="${item.key}">+</button>
+            <button type="button" class="remove-cart" data-cart-action="remove" data-key="${item.key}">Remove</button>
+          </div>
+        </div>
+        <strong class="cart-line-total">${money(item.price * item.qty)}</strong>
+      </article>
+    `).join('');
+    if (total) total.textContent = money(subtotal());
+  };
+
+  const openCart = () => {
+    renderCart();
+    const drawer = document.getElementById('cartDrawer');
+    drawer?.classList.add('open');
+    drawer?.setAttribute('aria-hidden','false');
+  };
+  const closeCart = () => {
+    const drawer = document.getElementById('cartDrawer');
+    drawer?.classList.remove('open');
+    drawer?.setAttribute('aria-hidden','true');
+  };
+
+  window.PROZIVO_GET_CART = () => cart;
+  window.PROZIVO_CART_SUBTOTAL = () => subtotal();
+  window.PROZIVO_MONEY = money;
+  window.PROZIVO_OPEN_CART = openCart;
+  window.PROZIVO_CLOSE_CART = closeCart;
+  window.PROZIVO_CLEAR_CART = () => { cart=[]; saveCart(); renderCart(); renderCount(); };
+
+  // Delegated click: works reliably even after dynamic DOM changes.
+  document.addEventListener('click', (e) => {
+    const cartBtn = e.target.closest?.('#cartOpenBtn');
+    if (cartBtn) { e.preventDefault(); openCart(); return; }
+
+    const action = e.target.closest?.('[data-cart-action]');
+    if (action) {
+      const item = cart.find(i => i.key === action.dataset.key);
+      if (!item) return;
+      if (action.dataset.cartAction === 'plus') item.qty += 1;
+      if (action.dataset.cartAction === 'minus') item.qty -= 1;
+      if (action.dataset.cartAction === 'remove' || item.qty <= 0) cart = cart.filter(i => i.key !== action.dataset.key);
+      saveCart(); renderCart(); renderCount();
+      return;
+    }
+
+    if (e.target.closest?.('[data-close-cart]')) closeCart();
+  });
+
+  const productsModal = document.getElementById('productsModal');
+  const productGrid = document.getElementById('productGrid');
+  const productsTitle = document.getElementById('productsModalTitle');
+  const productsDesc = document.getElementById('productsModalDesc');
+  const productEnquiryBtn = document.getElementById('productEnquiryBtn');
+
+  const closeProductCatalog = () => {
+    productsModal?.classList.remove('open');
+    productsModal?.setAttribute('aria-hidden','true');
+    document.body.classList.remove('modal-open');
+  };
+  window.PROZIVO_CLOSE_PRODUCTS = closeProductCatalog;
+
+  const openProductCatalog = (sport) => {
+    const items = PRODUCT_CATALOG[sport] || [];
+    if (productsTitle) productsTitle.textContent = sport + ' Equipment';
+    if (productsDesc) productsDesc.textContent = items.length
+      ? 'Choose a product to add to cart or buy now.'
+      : 'Products are being added to this category.';
+    if (productGrid) {
+      productGrid.innerHTML = items.length ? items.map(p => `
+        <article class="product-card">
+          <div class="product-photo">
+            <img src="${p.image}" alt="${p.name}" loading="lazy" decoding="async" onerror="this.classList.add('img-error')">
+            <span class="photo-badge">${p.brand || 'BRAND'} PRODUCT</span>
+          </div>
+          <div class="product-info">
+            <small class="product-brand">${p.brand || sport}</small>
+            <h3>${p.name}</h3>
+            <div class="product-price">${money(p.price)}</div>
+            <small class="demo-price">Demo price — replace with your real price</small>
+            <div class="product-actions">
+              <button type="button" class="product-add" data-product-action="add" data-sport="${sport}" data-name="${encodeURIComponent(p.name)}">Add to Cart</button>
+              <button type="button" class="product-buy" data-product-action="buy" data-sport="${sport}" data-name="${encodeURIComponent(p.name)}">Buy Now</button>
+            </div>
+          </div>
+        </article>`).join('') : '<div class="empty-state"><div class="empty-icon">📦</div><h3>Catalog updating</h3><p>Send us your requirement and we will confirm availability.</p></div>';
+    }
+    productsModal?.classList.add('open');
+    productsModal?.setAttribute('aria-hidden','false');
+    document.body.classList.add('modal-open');
+  };
+
+  document.addEventListener('click', (e) => {
+    const card = e.target.closest?.('.product-category-card');
+    if (card) { openProductCatalog(card.dataset.sport); return; }
+
+    const close = e.target.closest?.('[data-close-products]');
+    if (close) { closeProductCatalog(); return; }
+
+    const btn = e.target.closest?.('[data-product-action]');
+    if (btn) {
+      const sport = btn.dataset.sport;
+      const name = decodeURIComponent(btn.dataset.name);
+      const product = (PRODUCT_CATALOG[sport] || []).find(p => p.name === name);
+      if (!product) return;
+      const key = sport + '::' + product.name;
+      const existing = cart.find(i => i.key === key);
+      if (existing) existing.qty += 1;
+      else cart.push({key,sport,name:product.name,brand:product.brand||'',image:product.image,price:Number(product.price||0),qty:1});
+      saveCart(); renderCount();
+      if (btn.dataset.productAction === 'buy') {
+        closeProductCatalog();
+        openCart();
+      } else {
+        btn.textContent = 'Added ✓';
+        setTimeout(() => btn.textContent = 'Add to Cart', 900);
+      }
+    }
+  });
+
+  document.getElementById('productEnquiryBtn')?.addEventListener('click', () => {
+    const message = document.querySelector('#contact textarea[name="message"]');
+    const type = document.querySelector('#contact select[name="type"]');
+    if (message) message.value = (productsTitle?.textContent || 'Sports') + ' - Bulk / Wholesale enquiry';
+    if (type) type.value = 'Wholesale order';
+    closeProductCatalog();
+    document.getElementById('contact')?.scrollIntoView({behavior:'smooth'});
+  });
+
+  document.getElementById('goCheckoutBtn')?.addEventListener('click', () => {
+    document.dispatchEvent(new CustomEvent('prozivo:checkout'));
+  });
+
+  document.addEventListener('click', e => {
+    if (e.target.closest?.('[data-close-account]')) window.PROZIVO_CLOSE_ACCOUNT?.();
+    if (e.target.closest?.('[data-close-orders]')) window.PROZIVO_CLOSE_ORDERS?.();
+    if (e.target.closest?.('[data-close-checkout]')) window.PROZIVO_CLOSE_CHECKOUT?.();
+  });
+
+  renderCount();
+  renderCart();
+})();
+
+</script>
+
+<!-- CUSTOMER AUTH + SHOPPING UI -->
+<div class="auth-gate" id="authGate" aria-hidden="false">
+  <div class="auth-backdrop"></div>
+  <div class="auth-card" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="auth-brand"><div class="auth-mark">P</div><div><strong>PROZIVO SPORTS</strong><small>Customer Account</small></div></div>
+    <div class="auth-tabs">
+      <button type="button" class="auth-tab active" data-auth-tab="login">Login</button>
+      <button type="button" class="auth-tab" data-auth-tab="signup">Create Account</button>
+    </div>
+    <section class="auth-panel active" data-auth-panel="login">
+      <h2 id="authTitle">Welcome back</h2>
+      <p class="auth-sub">Login to purchase products and view your orders.</p><div class="speed-note" id="speedNote">Fast loading enabled • large media loads only when needed</div>
+      <form id="loginForm" class="auth-form">
+        <label>Email<input id="loginEmail" type="email" required autocomplete="email"></label>
+        <label>Password<input id="loginPassword" type="password" required autocomplete="current-password"></label>
+        <button class="btn btn-primary btn-full" type="submit">Login</button>
+        <button class="auth-link-btn" type="button" id="forgotPasswordBtn">Forgot password?</button>
+        <p class="auth-message" id="loginMessage" role="status"></p>
+      </form>
+    </section>
+    <section class="auth-panel" data-auth-panel="signup">
+      <h2>Create your account</h2>
+      <p class="auth-sub">Save your details for checkout and My Orders.</p>
+      <form id="signupForm" class="auth-form">
+        <label>Full Name<input id="signupName" required autocomplete="name"></label>
+        <label>Mobile Number<input id="signupPhone" required autocomplete="tel"></label>
+        <label>Email<input id="signupEmail" type="email" required autocomplete="email"></label>
+        <label>Password<input id="signupPassword" type="password" required minlength="6" autocomplete="new-password"></label>
+        <label>Confirm Password<input id="signupPassword2" type="password" required minlength="6" autocomplete="new-password"></label>
+        <button class="btn btn-primary btn-full" type="submit">Create Account</button>
+        <p class="auth-message" id="signupMessage" role="status"></p>
+      </form>
+    </section>
+    <button type="button" class="auth-preview-btn" id="guestBrowseBtn">Continue browsing as guest</button>
+    <div class="auth-firebase-note">Firebase account system <span id="firebaseStatus">connecting…</span></div>
+  </div>
+</div>
+
+<div class="cart-drawer" id="cartDrawer" aria-hidden="true">
+  <div class="cart-backdrop" data-close-cart></div>
+  <aside class="cart-panel">
+    <button class="drawer-close" type="button" data-close-cart>×</button>
+    <p class="eyebrow">YOUR CART</p>
+    <h2>Shopping Cart</h2>
+    <div class="cart-items" id="cartItems"></div>
+    <div class="cart-summary">
+      <div><span>Subtotal</span><strong id="cartSubtotal">₹0</strong></div>
+      <small>Cash on Delivery is available in this first version.</small>
+      <button class="btn btn-primary btn-full" id="goCheckoutBtn" type="button">Proceed to Checkout</button>
+    </div>
+  </aside>
+</div>
+
+<div class="account-drawer" id="accountDrawer" aria-hidden="true">
+  <div class="account-backdrop" data-close-account></div>
+  <aside class="account-panel">
+    <button class="drawer-close" type="button" data-close-account>×</button>
+    <div class="account-avatar" id="accountAvatar">P</div>
+    <p class="eyebrow">MY ACCOUNT</p>
+    <h2 id="accountTitle">Customer</h2>
+    <div class="account-info">
+      <div><span>Name</span><strong id="accountName">—</strong></div>
+      <div><span>Email</span><strong id="accountEmail">—</strong></div>
+      <div><span>Phone</span><strong id="accountPhone">—</strong></div>
+    </div>
+    <div class="account-actions">
+      <button class="btn btn-outline btn-full" id="openOrdersBtn" type="button">📦 My Orders</button>
+      <button class="btn btn-primary btn-full" id="logoutBtn" type="button">Logout</button>
+    </div>
+  </aside>
+</div>
+
+<div class="orders-drawer" id="ordersDrawer" aria-hidden="true">
+  <div class="orders-backdrop" data-close-orders></div>
+  <aside class="orders-panel">
+    <button class="drawer-close" type="button" data-close-orders>×</button>
+    <p class="eyebrow">MY ORDERS</p>
+    <h2>Your Orders</h2>
+    <div id="ordersList" class="orders-list"><div class="empty-state"><div class="empty-icon">📦</div><h3>No orders yet</h3><p>Your COD orders will appear here.</p></div></div>
+  </aside>
+</div>
+
+<div class="checkout-modal" id="checkoutModal" aria-hidden="true">
+  <div class="checkout-backdrop" data-close-checkout></div>
+  <div class="checkout-card" role="dialog" aria-modal="true" aria-labelledby="checkoutTitle">
+    <button class="drawer-close" type="button" data-close-checkout>×</button>
+    <div class="checkout-grid">
+      <div>
+        <p class="eyebrow">CHECKOUT</p>
+        <h2 id="checkoutTitle">Delivery & Billing</h2>
+        <p class="checkout-note">Cash on Delivery is available in this first version.</p>
+
+        <form id="checkoutForm" class="checkout-form">
+          <h3 class="checkout-subtitle">Delivery Address</h3>
+          <div class="form-row">
+            <input id="addressName" name="deliveryName" placeholder="Full name" required>
+            <input id="addressPhone" name="deliveryPhone" placeholder="Mobile number" required>
+          </div>
+          <input id="addressLine1" name="deliveryAddress" placeholder="House / Flat / Street / Area" required>
+          <input id="addressLine2" name="deliveryLandmark" placeholder="Landmark (optional)">
+          <div class="form-row">
+            <input id="addressCity" name="deliveryCity" placeholder="City" required>
+            <input id="addressState" name="deliveryState" value="Bihar" placeholder="State" required>
+          </div>
+          <div class="form-row">
+            <input id="addressPincode" name="deliveryPincode" placeholder="PIN code" pattern="[0-9]{6}" required>
+            <input id="addressCountry" name="deliveryCountry" value="India" required>
+          </div>
+
+          <label class="same-billing">
+            <input type="checkbox" id="sameBilling" checked>
+            Billing address same as delivery address
+          </label>
+
+          <div id="billingFields" class="billing-fields hidden">
+            <h3 class="checkout-subtitle">Billing Address</h3>
+            <div class="form-row">
+              <input id="billingName" name="billingName" placeholder="Billing name">
+              <input id="billingPhone" name="billingPhone" placeholder="Billing mobile">
+            </div>
+            <input id="billingLine1" name="billingAddress" placeholder="House / Flat / Street / Area">
+            <input id="billingLine2" name="billingLandmark" placeholder="Landmark (optional)">
+            <div class="form-row">
+              <input id="billingCity" name="billingCity" placeholder="City">
+              <input id="billingState" name="billingState" value="Bihar" placeholder="State">
+            </div>
+            <div class="form-row">
+              <input id="billingPincode" name="billingPincode" placeholder="PIN code" pattern="[0-9]{6}">
+              <input id="billingCountry" name="billingCountry" value="India">
+            </div>
+          </div>
+
+          <label class="cod-option"><input type="radio" checked disabled> 💵 Cash on Delivery</label>
+          <button class="btn btn-primary btn-full" type="submit">Place COD Order</button>
+          <p class="auth-message" id="checkoutMessage" role="status"></p>
+        </form>
+      </div>
+      <div class="checkout-summary" id="checkoutSummary"></div>
+    </div>
+  </div>
+</div>
+
+/div>
+
+
+
+
+
+
+
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-app.js";
+  import {
+    getAuth, createUserWithEmailAndPassword, signInWithEmailAndPassword,
+    sendPasswordResetEmail, onAuthStateChanged, signOut, updateProfile,
+    setPersistence, browserLocalPersistence
+  } from "https://www.gstatic.com/firebasejs/12.19.0/firebase-auth.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyCU9ndURUGiBiOP2pPAX9hmawURhIBcr9I",
+    authDomain: "prozivo-sports-7f8b2.firebaseapp.com",
+    projectId: "prozivo-sports-7f8b2",
+    storageBucket: "prozivo-sports-7f8b2.firebasestorage.app",
+    messagingSenderId: "963398700476",
+    appId: "1:963398700476:web:6840ec1a0fe12d23aaefb9",
+    measurementId: "G-XJRZK9P4CC"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const auth = getAuth(app);
+  const authGate = document.getElementById("authGate");
+  const firebaseStatus = document.getElementById("firebaseStatus");
+  const accountDrawer = document.getElementById("accountDrawer");
+  const ordersDrawer = document.getElementById("ordersDrawer");
+  const checkoutModal = document.getElementById("checkoutModal");
+  let currentUser = null;
+  let currentProfile = null;
+  let firestoreReady = null;
+
+  const msg = (id, text, success=false) => {
+    const el=document.getElementById(id);
+    if(!el) return;
+    el.textContent=text||"";
+    el.classList.toggle("success",success);
+  };
+  const showAuth=()=>{authGate?.classList.remove("hidden");authGate?.setAttribute("aria-hidden","false");};
+  const hideAuth=()=>{authGate?.classList.add("hidden");authGate?.setAttribute("aria-hidden","true");};
+  const closeAccount=()=>{accountDrawer?.classList.remove("open");accountDrawer?.setAttribute("aria-hidden","true");};
+  const openAccount=()=>{accountDrawer?.classList.add("open");accountDrawer?.setAttribute("aria-hidden","false");};
+  const closeOrders=()=>{ordersDrawer?.classList.remove("open");ordersDrawer?.setAttribute("aria-hidden","true");};
+  const closeCheckout=()=>{checkoutModal?.classList.remove("open");checkoutModal?.setAttribute("aria-hidden","true");};
+  window.PROZIVO_CLOSE_ACCOUNT=closeAccount;
+  window.PROZIVO_CLOSE_ORDERS=closeOrders;
+  window.PROZIVO_CLOSE_CHECKOUT=closeCheckout;
+
+  async function getFirestoreTools(){
+    if (!firestoreReady) firestoreReady = Promise.all([
+      import("https://www.gstatic.com/firebasejs/12.19.0/firebase-firestore.js")
+    ]).then(([fs]) => ({...fs}));
+    return firestoreReady;
+  }
+
+  function setFirebaseReady(text, ok=true){
+    if(!firebaseStatus) return;
+    firebaseStatus.textContent=text;
+    firebaseStatus.className=ok ? "ok" : "error";
+  }
+
+  // Auth handlers are installed immediately. Firestore is loaded only when needed,
+  // making initial login significantly lighter.
+  document.querySelectorAll("[data-auth-tab]").forEach(btn => btn.addEventListener("click",()=>{
+    const target=btn.dataset.authTab;
+    document.querySelectorAll(".auth-tab").forEach(b=>b.classList.toggle("active",b===btn));
+    document.querySelectorAll(".auth-panel").forEach(p=>p.classList.toggle("active",p.dataset.authPanel===target));
+    const title=document.getElementById("authTitle");
+    if(title) title.textContent=target==="login"?"Welcome back":"Create your account";
+  }));
+
+  document.getElementById("guestBrowseBtn")?.addEventListener("click",hideAuth);
+
+  document.getElementById("loginForm")?.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const button=e.target.querySelector('button[type="submit"]');
+    if(button){{button.disabled=true;button.textContent="Logging in…";}}
+    msg("loginMessage","Checking your account…");
+    try{
+      await signInWithEmailAndPassword(auth,
+        document.getElementById("loginEmail").value.trim(),
+        document.getElementById("loginPassword").value
+      );
+      msg("loginMessage","Login successful.",true);
+      hideAuth(); // Don't wait for Firestore/profile fetch before showing the site.
+    }catch(err){
+      const text=err.code==="auth/invalid-credential"?"Email or password is incorrect.":
+        err.code==="auth/too-many-requests"?"Too many attempts. Please wait and try again.":
+        err.message||"Login failed.";
+      msg("loginMessage",text);
+    }finally{
+      if(button){{button.disabled=false;button.textContent="Login";}}
+    }
+  });
+
+  document.getElementById("forgotPasswordBtn")?.addEventListener("click",async()=>{
+    const email=document.getElementById("loginEmail").value.trim();
+    if(!email){{msg("loginMessage","Enter your email first.");return;}}
+    try{
+      await sendPasswordResetEmail(auth,email);
+      msg("loginMessage","Password reset email sent. Check your inbox.",true);
+    }catch(err){{msg("loginMessage",err.message||"Could not send reset email.");}}
+  });
+
+  document.getElementById("signupForm")?.addEventListener("submit",async e=>{
+    e.preventDefault();
+    const name=document.getElementById("signupName").value.trim();
+    const phone=document.getElementById("signupPhone").value.trim();
+    const email=document.getElementById("signupEmail").value.trim();
+    const pw=document.getElementById("signupPassword").value;
+    const pw2=document.getElementById("signupPassword2").value;
+    if(pw!==pw2){{msg("signupMessage","Passwords do not match.");return;}}
+    msg("signupMessage","Creating account…");
+    try{
+      const cred=await createUserWithEmailAndPassword(auth,email,pw);
+      await updateProfile(cred.user,{{displayName:name}});
+      // Save profile in Firestore, but don't block the auth UI while Firestore loads.
+      getFirestoreTools().then(({getFirestore,doc,setDoc,serverTimestamp})=>{
+        const db=getFirestore(app);
+        return setDoc(doc(db,"users",cred.user.uid),{
+          uid:cred.user.uid,name,phone,email,address:{{}},
+          createdAt:serverTimestamp(),updatedAt:serverTimestamp()
+        },{{merge:true}});
+      }).catch(err=>console.warn("Profile save failed:",err));
+      msg("signupMessage","Account created successfully.",true);
+      hideAuth();
+    }catch(err){
+      const text=err.code==="auth/email-already-in-use"?"This email already has an account.":
+        err.code==="auth/weak-password"?"Use a stronger password (6+ characters).":
+        err.message||"Could not create account.";
+      msg("signupMessage",text);
+    }
+  });
+
+  async function loadProfile(){
+    if(!currentUser) return;
+    try{
+      const {{getFirestore,doc,getDoc}}=await getFirestoreTools();
+      const db=getFirestore(app);
+      const snap=await getDoc(doc(db,"users",currentUser.uid));
+      currentProfile=snap.exists()?snap.data():null;
+    }catch(err){console.warn("Profile load failed:",err);}
+    const name=currentProfile?.name||currentUser.displayName||(currentUser.email||"Customer").split("@")[0];
+    document.getElementById("accountTitle").textContent=name;
+    document.getElementById("accountName").textContent=name;
+    document.getElementById("accountEmail").textContent=currentUser.email||"—";
+    document.getElementById("accountPhone").textContent=currentProfile?.phone||"—";
+    document.getElementById("accountAvatar").textContent=name.charAt(0).toUpperCase();
+  }
+
+  onAuthStateChanged(auth,user=>{
+    currentUser=user;
+    if(user){
+      setFirebaseReady("connected",true);
+      hideAuth();
+      // Profile fetch happens after the account UI is visible.
+      loadProfile();
+    }else{
+      setFirebaseReady("ready",true);
+      showAuth();
+    }
+  });
+
+  document.getElementById("accountOpenBtn")?.addEventListener("click",()=>currentUser?openAccount():showAuth());
+  document.querySelectorAll("[data-close-account]").forEach(el=>el.addEventListener("click",closeAccount));
+  document.getElementById("logoutBtn")?.addEventListener("click",async()=>{await signOut(auth);closeAccount();});
+  document.getElementById("openOrdersBtn")?.addEventListener("click",async()=>{
+    closeAccount();
+    document.getElementById("ordersDrawer")?.classList.add("open");
+    document.getElementById("ordersDrawer")?.setAttribute("aria-hidden","false");
+    await loadOrders();
+  });
+  document.querySelectorAll("[data-close-orders]").forEach(el=>el.addEventListener("click",closeOrders));
+
+  function fillField(id,value=""){const el=document.getElementById(id);if(el)el.value=value||"";}
+  async function startCheckout(){
+    const cart=window.PROZIVO_GET_CART?.()||[];
+    if(!cart.length) return;
+    if(!currentUser){
+      window.PROZIVO_CLOSE_CART?.();
+      showAuth();
+      msg("loginMessage","Please login or create an account before checkout.");
+      return;
+    }
+    fillField("addressName",currentProfile?.name||currentUser.displayName||"");
+    fillField("addressPhone",currentProfile?.phone||"");
+    const a=currentProfile?.address||{{}};
+    fillField("addressLine1",a.address); fillField("addressLine2",a.landmark);
+    fillField("addressCity",a.city); fillField("addressState",a.state||"Bihar");
+    fillField("addressPincode",a.pincode); fillField("addressCountry",a.country||"India");
+    document.getElementById("sameBilling").checked=true;
+    document.getElementById("billingFields").classList.add("hidden");
+    renderCheckoutSummary();
+    checkoutModal?.classList.add("open");
+    checkoutModal?.setAttribute("aria-hidden","false");
+  }
+
+  function renderCheckoutSummary(){
+    const cart=window.PROZIVO_GET_CART?.()||[];
+    const money=window.PROZIVO_MONEY||((n)=>"₹"+Number(n||0).toLocaleString("en-IN"));
+    const box=document.getElementById("checkoutSummary");
+    if(!box)return;
+    box.innerHTML='<h3>Order Summary</h3>'+cart.map(i=>`<div class="summary-line"><span>${i.name} × ${i.qty}</span><strong>${money(i.price*i.qty)}</strong></div>`).join('')+
+      `<div class="summary-total"><span>Total</span><strong>${money(window.PROZIVO_CART_SUBTOTAL?.()||0)}</strong></div>
+       <p style="color:#aaa;font-size:11px;margin-top:12px">Payment: Cash on Delivery</p>`;
+  }
+
+  document.addEventListener("prozivo:checkout",startCheckout);
+
+  document.getElementById("sameBilling")?.addEventListener("change",e=>{
+    document.getElementById("billingFields")?.classList.toggle("hidden",e.target.checked);
+  });
+
+  document.querySelectorAll("[data-close-checkout]").forEach(el=>el.addEventListener("click",closeCheckout));
+
+  document.getElementById("checkoutForm")?.addEventListener("submit",async e=>{
+    e.preventDefault();
+    if(!currentUser) return showAuth();
+    const cart=window.PROZIVO_GET_CART?.()||[];
+    if(!cart.length) return;
+    msg("checkoutMessage","Placing your COD order…");
+    const delivery={
+      name:document.getElementById("addressName").value.trim(),
+      phone:document.getElementById("addressPhone").value.trim(),
+      address:document.getElementById("addressLine1").value.trim(),
+      landmark:document.getElementById("addressLine2").value.trim(),
+      city:document.getElementById("addressCity").value.trim(),
+      state:document.getElementById("addressState").value.trim(),
+      pincode:document.getElementById("addressPincode").value.trim(),
+      country:document.getElementById("addressCountry").value.trim()
+    };
+    const same=document.getElementById("sameBilling").checked;
+    const billing=same?{...delivery}:{
+      name:document.getElementById("billingName").value.trim(),
+      phone:document.getElementById("billingPhone").value.trim(),
+      address:document.getElementById("billingLine1").value.trim(),
+      landmark:document.getElementById("billingLine2").value.trim(),
+      city:document.getElementById("billingCity").value.trim(),
+      state:document.getElementById("billingState").value.trim(),
+      pincode:document.getElementById("billingPincode").value.trim(),
+      country:document.getElementById("billingCountry").value.trim()
+    };
+
+    try{
+      const {{getFirestore,doc,setDoc,collection,addDoc,serverTimestamp}}=await getFirestoreTools();
+      const db=getFirestore(app);
+      const total=Number(window.PROZIVO_CART_SUBTOTAL?.()||0);
+      await setDoc(doc(db,"users",currentUser.uid),{
+        uid:currentUser.uid,
+        name:delivery.name,
+        phone:delivery.phone,
+        email:currentUser.email||"",
+        address:delivery,
+        updatedAt:serverTimestamp()
+      },{{merge:true}});
+      const ref=await addDoc(collection(db,"orders"),{
+        userId:currentUser.uid,
+        customer:{{name:delivery.name,phone:delivery.phone,email:currentUser.email||""}},
+        deliveryAddress:delivery,
+        billingAddress:billing,
+        items:cart.map(i=>({{sport:i.sport,name:i.name,brand:i.brand||"",image:i.image,price:Number(i.price||0),qty:Number(i.qty||0)}})),
+        total,
+        paymentMethod:"COD",
+        paymentStatus:"Pending",
+        orderStatus:"Pending",
+        createdAt:serverTimestamp()
+      });
+      window.PROZIVO_CLEAR_CART?.();
+      document.getElementById("checkoutForm").reset();
+      document.getElementById("addressState").value="Bihar";
+      document.getElementById("addressCountry").value="India";
+      document.getElementById("sameBilling").checked=true;
+      document.getElementById("billingFields").classList.add("hidden");
+      msg("checkoutMessage","Order placed successfully! Order ID: "+ref.id,true);
+      setTimeout(()=>{closeCheckout();openOrdersDrawer();},800);
+    }catch(err){
+      console.error(err);
+      msg("checkoutMessage",err.code==="permission-denied"?"Order blocked by Firebase rules. Publish firestore.rules from this package.":(err.message||"Could not place order."));
+    }
+  });
+
+  async function loadOrders(){
+    const box=document.getElementById("ordersList");
+    if(!box) return;
+    if(!currentUser){box.innerHTML='<div class="empty-state"><h3>Login required</h3></div>';return;}
+    box.innerHTML='<div class="empty-state"><div class="empty-icon">⏳</div><h3>Loading orders…</h3></div>';
+    try{
+      const {{getFirestore,collection,query,where,getDocs}}=await getFirestoreTools();
+      const db=getFirestore(app);
+      const snap=await getDocs(query(collection(db,"orders"),where("userId","==",currentUser.uid)));
+      const orders=snap.docs.map(d=>({{id:d.id,...d.data()}})).sort((a,b)=>{
+        const ta=a.createdAt?.toMillis?a.createdAt.toMillis():0;
+        const tb=b.createdAt?.toMillis?b.createdAt.toMillis():0;
+        return tb-ta;
+      });
+      if(!orders.length){box.innerHTML='<div class="empty-state"><div class="empty-icon">📦</div><h3>No orders yet</h3><p>Your COD orders will appear here.</p></div>';return;}
+      box.innerHTML=orders.map(o=>`
+        <article class="order-card">
+          <div class="order-head"><strong>Order #${o.id.slice(0,10).toUpperCase()}</strong><span class="order-status">${o.orderStatus||"Pending"}</span></div>
+          <div class="order-items">${(o.items||[]).map(i=>`<div><span>${i.name} × ${i.qty}</span><strong>${window.PROZIVO_MONEY?.(i.price*i.qty)||("₹"+Number(i.price*i.qty||0).toLocaleString("en-IN"))}</strong></div>`).join('')}</div>
+          <div class="order-foot"><span>COD</span><strong>${window.PROZIVO_MONEY?.(o.total)||("₹"+Number(o.total||0).toLocaleString("en-IN"))}</strong></div>
+          <div style="color:#777;font-size:10px;margin-top:8px">${o.deliveryAddress?.city||""}, ${o.deliveryAddress?.state||""} ${o.deliveryAddress?.pincode||""}</div>
+        </article>`).join('');
+    }catch(err){
+      console.error(err);
+      box.innerHTML='<div class="empty-state"><h3>Could not load orders</h3><p>Check your Firestore rules in Firebase Console.</p></div>';
+    }
+  }
+
+  setPersistence(auth,browserLocalPersistence).catch(()=>{});
+</script>
+
+</body>
+</html>
